@@ -1,5 +1,3 @@
-// script.js
-// 주의: './data.js' 처럼 확장자까지 정확히 적어야 합니다.
 import { playlistData } from './data.js';
 
 let currentSongIndex = 0;
@@ -9,13 +7,11 @@ let progressInterval = null;
 let playerReady = false;
 let isRepeatOne = false;
 
-// YouTube IFrame API 로드
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 전역 함수 할당
 window.onYouTubeIframeAPIReady = function() {
     if(playlistData.length > 0) {
         playlistData.forEach(item => {
@@ -24,14 +20,6 @@ window.onYouTubeIframeAPIReady = function() {
             item.cover = videoId 
                 ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
                 : `https://ui-avatars.com/api/?name=${encodeURIComponent(item.title)}&background=333&color=fff`;
-            
-            if (!item.hashtags) {
-                item.hashtags = [];
-                if (item.artist) {
-                    const artistName = item.artist.split('(')[0].trim();
-                    if (artistName) item.hashtags.push("#" + artistName);
-                }
-            }
         });
 
         player = new YT.Player('youtube-player-container', {
@@ -100,6 +88,8 @@ function renderPlaylist() {
 function loadSongUI(index) {
     if(!playlistData[index]) return;
     const song = playlistData[index];
+    
+    // 기본 정보
     document.getElementById('main-album-art').src = song.cover;
     const titleEl = document.getElementById('main-title');
     titleEl.innerText = song.title;
@@ -107,8 +97,22 @@ function loadSongUI(index) {
     document.getElementById('main-artist').innerText = song.artist || 'Unknown Artist';
     document.getElementById('player-zone').style.setProperty('--player-bg-image', `url('${song.cover}')`);
     
+    // [NEW] 해시태그 처리
     const tagBox = document.getElementById('main-hashtags');
-    tagBox.innerHTML = song.hashtags.map(t => `<span class="hashtag">${t}</span>`).join('');
+    tagBox.innerHTML = '';
+    const tags = song.hashtags || [];
+    if (tags.length > 0) {
+        tagBox.innerHTML = tags.map(t => `<span class="hashtag">${t}</span>`).join('');
+    }
+
+    // [NEW] 코멘트 처리
+    const commentEl = document.getElementById('main-comment');
+    if (song.comment && song.comment.trim() !== "") {
+        commentEl.innerText = `"${song.comment}"`;
+        commentEl.style.display = 'block';
+    } else {
+        commentEl.style.display = 'none';
+    }
 
     document.querySelectorAll('.song-item').forEach((el, i) => {
         el.classList.toggle('active', i === index);
@@ -119,7 +123,7 @@ function loadSongUI(index) {
         lyricsContent.innerHTML = song.lyrics;
         lyricsContent.style.display = 'block'; 
     } else {
-        lyricsContent.innerHTML = `<div style="margin-top:2rem; font-size:0.85rem;">등록된 가사가 없습니다.</div>`;
+        lyricsContent.innerHTML = `<div style="margin-top:2rem; font-size:0.85rem; color:#666;">등록된 가사가 없습니다.</div>`;
         lyricsContent.style.display = 'flex';
         lyricsContent.style.flexDirection = 'column';
         lyricsContent.style.justifyContent = 'center';
