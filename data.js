@@ -1,10 +1,12 @@
 export const playlistData = [
-            {
-                id: 1,
-                title: "지금 바로 윤회!",
-                artist: "Nakiso",
-                link: "https://www.youtube.com/watch?v=3iUgKH8c7p4",
-                lyrics: `いますぐ輪廻 今回も結ばれないね
+    {
+        id: 1,
+        title: "지금 바로 윤회!",
+        artist: "Nakiso",
+        link: "https://www.youtube.com/watch?v=3iUgKH8c7p4",
+        hashtags: [],
+        comment: "",
+        lyrics: `いますぐ輪廻 今回も結ばれないね
 이마 스구 린네 콘카이모 무스바레나이네
 지금 바로 윤회, 이번에도 맺어질 수 없네
 
@@ -173,13 +175,15 @@ export const playlistData = [
 전부 버려줘, 휙
 
 (출처: http://vocaro.wikidot.com/retry-now)`
-            },
-            {
-                id: 2,
-                title: "사기라이프게임",
-                artist: "kemu ( 텐진 코토네 커버 )",
-                link: "https://www.youtube.com/watch?v=7XbDOwWbAuk",
-                lyrics: `『明日の午後は雨が降る』と　ぽつり
+    },
+    {
+        id: 2,
+        title: "사기라이프게임",
+        artist: "kemu ( 텐진 코토네 커버 )",
+        link: "https://www.youtube.com/watch?v=7XbDOwWbAuk",
+        hashtags: [],
+        comment: "",
+        lyrics: `『明日の午後は雨が降る』と　ぽつり
 『아시타노 고고와 아메가 후루』토 포츠리
 『내일 오후엔 비가 올 거야』라며 툭 하고
 
@@ -384,13 +388,15 @@ export const playlistData = [
 내일은 비가 오려나
 
 (출처: http://vocaro.wikidot.com/cheat-life-game)`
-            },
-            {
-                id: 3,
-                title: "우견의 나비",
-                artist: "노리피 ( dongdang 커버 )",
-                link: "https://www.youtube.com/watch?v=RsgCoaEy-0U",
-                lyrics: `右肩に紫蝶々　キスをしたこの部屋の隅で
+    },
+    {
+        id: 3,
+        title: "우견의 나비",
+        artist: "노리피 ( dongdang 커버 )",
+        link: "https://www.youtube.com/watch?v=RsgCoaEy-0U",
+        hashtags: [],
+        comment: "",
+        lyrics: `右肩に紫蝶々　キスをしたこの部屋の隅で
 미기카타니 무라사키 초오초오 키스오 시타 코노 헤야노 스미데
 오른 어깨의 보랏빛 나비 키스를 했던 이 방 한 구석에서
 
@@ -503,13 +509,15 @@ export const playlistData = [
 애절함이란 감정을 알고 울려 퍼지는 피아노 불협화음
 
 (출처: http://vocaro.wikidot.com/right-shoulder-butterfly)`
-            },
-            {
-                id: 4,
-                title: "보랏빛 해바라기",
-                artist: "카시이 모이미 ( Ray 커버 )",
-                link: "https://www.youtube.com/watch?v=B5X3VlWeUWY",
-                lyrics: `「もう会えないね」って少し演じた声で
+    },
+    {
+        id: 4,
+        title: "보랏빛 해바라기",
+        artist: "카시이 모이미 ( Ray 커버 )",
+        link: "https://www.youtube.com/watch?v=B5X3VlWeUWY",
+        hashtags: [],
+        comment: "",
+        lyrics: `「もう会えないね」って少し演じた声で
 모오 아에나이넷테 스코시 엔지타 코에데
 「더는 만날 수 없겠네」라며 약간 꾸며낸 목소리로
 
@@ -734,13 +742,15 @@ export const playlistData = [
 부르짖듯이 숨막히듯이
 
 (출처: http://vocaro.wikidot.com/violet-sunflower)`
-            },
-            {
-                id: 5,
-                title: "파라디클로로벤젠",
-                artist: "OwataP",
-                link: "https://www.youtube.com/watch?v=0gUsfig2Gzw",
-                lyrics: `ボクは何のために歌う？
+    },
+    {
+        id: 5,
+        title: "파라디클로로벤젠",
+        artist: "OwataP",
+        link: "https://www.youtube.com/watch?v=0gUsfig2Gzw",
+        hashtags: [],
+        comment: "",
+        lyrics: `ボクは何のために歌う？
 보쿠와 난노 타메니 우타우?
 나는 무엇을 위해서 노래해?
 
@@ -1057,13 +1067,15 @@ export const playlistData = [
 생명이 다할 때까지 자
 
 (출처: http://vocaro.wikidot.com/paradichlorobenzene)`
-            },
-            {
-                id: 6,
-                title: "신님태엽감기",
-                artist: "kemu( 텐진 코토네 커버 )",
-                link: "https://www.youtube.com/watch?v=KONJlE6keqM",
-                lyrics: `お前のせいだよカタストロフィ
+    },
+    {
+        id: 6,
+        title: "신님태엽감기",
+        artist: "kemu( 텐진 코토네 커버 )",
+        link: "https://www.youtube.com/watch?v=KONJlE6keqM",
+        hashtags: [],
+        comment: "널 위해 한건데 왜 이렇게 된걸까? 같은 느낌이 있죠",
+        lyrics: `お前のせいだよカタストロフィ
 오마에노 세이다요 카타스토로휘
 너 때문이야 카타스트로피 (Catastrophe)
 
@@ -1224,13 +1236,15 @@ export const playlistData = [
 그럼 잘 있으세요 언젠가 봅시다
 
 ( 출처 : http://vocaro.wikidot.com/god-spring-winding )`
-            },
-            {
-                id: 7,
-                title: "노심융해",
-                artist: "iroha ( 이세계 정서 커버 )",
-                link: "https://www.youtube.com/watch?v=ovJSG_FgyHw",
-                lyrics: `街明かり華やか
+    },
+    {
+        id: 7,
+        title: "노심융해",
+        artist: "iroha ( 이세계 정서 커버 )",
+        link: "https://www.youtube.com/watch?v=ovJSG_FgyHw",
+        hashtags: [],
+        comment: "",
+        lyrics: `街明かり華やか
 마치아카리 하나야카
 거리의 불빛 화려함
 
@@ -1451,20 +1465,24 @@ export const playlistData = [
 분명 그런 세계야
 
 ( 출처 : http://vocaro.wikidot.com/meltdown )`
-            },
-            {
-                id: 8,
-                title: "The Truman show - main theme",
-                artist: "OST",
-                link: "https://www.youtube.com/watch?v=R-WjAOdkU5E",
-                lyrics: `-`
-            },
-            {
-                id: 9,
-                title: "SECRET;WEAPON",
-                artist: "Apo11o program",
-                link: "https://www.youtube.com/watch?v=XdjPB2V5R5s",
-                lyrics: `韓紅と弧隠の跡　冰音め
+    },
+    {
+        id: 8,
+        title: "The Truman show - main theme",
+        artist: "OST",
+        link: "https://www.youtube.com/watch?v=R-WjAOdkU5E",
+        hashtags: [],
+        comment: "사실 촉이 좋은 분은 여기서 눈치를 챘을거라고 생각해요(ㅋㅋ)",
+        lyrics: `-`
+    },
+    {
+        id: 9,
+        title: "SECRET;WEAPON",
+        artist: "Apo11o program",
+        link: "https://www.youtube.com/watch?v=XdjPB2V5R5s",
+        hashtags: [],
+        comment: "예언자로서 넣은 느낌? 성인의 느낌으로....",
+        lyrics: `韓紅と弧隠の跡　冰音め
 카라쿠레토 코카쿠시노아토 히오토메
 진홍과 호은의 발자취, 얼어붙은 소리
 
@@ -1504,14 +1522,16 @@ C'mon your riot!!
 오토노카이라이타치요 사케베 타타케 호무라모에츠키테모 오와레나이
 소리의 괴뢰들이여! 소리치고 두드려! 불꽃에 전부 타 버린다 해도 멈추지 않아!
 
-( 출처 :https://namu.wiki/w/SECRET%3BWEAPON )`
-            },
-            {
-                id: 10,
-                title: "Nídhögg",
-                artist: "溝口ゆうま",
-                link: "https://www.youtube.com/watch?v=0d0sg7RwyDA",
-                lyrics: `地を這う民たにんよ 何を糧に生きる？
+( 출처 : https://namu.wiki/w/SECRET%3BWEAPON )`
+    },
+    {
+        id: 10,
+        title: "Nídhögg",
+        artist: "溝口ゆうま",
+        link: "https://www.youtube.com/watch?v=0d0sg7RwyDA",
+        hashtags: [],
+        comment: "예언자로서 넣은 느낌? 성인의 느낌으로....2",
+        lyrics: `地を這う民たにんよ 何を糧に生きる？
 지오하우 타닌요 나니오카테니 이키루
 땅을 기는 백성들이여 무엇을 먹고 사는가?
 
@@ -1604,13 +1624,15 @@ C'mon your riot!!
 다시 태어나기 위하여
 
 ( 출처 : https://namu.wiki/w/N%C3%ADdh%C3%B6gg )`
-            },
-            {
-                id: 11,
-                title: "호랑나비",
-                artist: "포르노 그라피티 ( 마츠나가 이오리 커버 )",
-                link: "https://www.youtube.com/watch?v=qQ6e3jd2_rI",
-                lyrics: `ヒラリヒラリと舞い遊ぶように
+    },
+    {
+        id: 11,
+        title: "호랑나비",
+        artist: "포르노 그라피티 ( 마츠나가 이오리 커버 )",
+        link: "https://www.youtube.com/watch?v=qQ6e3jd2_rI",
+        hashtags: [],
+        comment: "",
+        lyrics: `ヒラリヒラリと舞い遊ぶように
 히라리히라리토 마이아소부 요-니
 하늘하늘 춤추듯이
 
@@ -1867,13 +1889,15 @@ C'mon your riot!!
 쉬었으면 좋겠어
 
 ( 출처 : https://namu.wiki/w/%E3%82%A2%E3%82%B2%E3%83%8F%E8%9D%B6?from=%EC%95%84%EA%B2%8C%ED%95%98%EC%B5%B8 )`
-            },
-            {
-                id: 12,
-                title: "기다려줘 피안에서",
-                artist: "rinri",
-                link: "https://www.youtube.com/watch?v=OCNq16YvLC4",
-                lyrics: `揺れる波のように穏やかで良い。
+    },
+    {
+        id: 12,
+        title: "기다려줘 피안에서",
+        artist: "rinri",
+        link: "https://www.youtube.com/watch?v=OCNq16YvLC4",
+        hashtags: [],
+        comment: "",
+        lyrics: `揺れる波のように穏やかで良い。
 유레루 나미노 요오니 오다야카데 이이
 일렁이는 파도처럼 평온하면 돼.
 
@@ -2078,13 +2102,15 @@ C'mon your riot!!
 웃는 얼굴로 기다려 줘, 피안에서.
 
 ( 출처 : http://vocaro.wikidot.com/please-wait-at-equinoct )`
-            },
-            {
-                id: 13,
-                title: "당신밖에 보이지않아!",
-                artist: "r-906(dongdang 커버 )",
-                link: "https://www.youtube.com/watch?v=CoP2eOOfNiY",
-                lyrics: `きっと運命の寵児
+    },
+    {
+        id: 13,
+        title: "당신밖에 보이지않아!",
+        artist: "r-906(dongdang 커버 )",
+        link: "https://www.youtube.com/watch?v=CoP2eOOfNiY",
+        hashtags: [],
+        comment: "",
+        lyrics: `きっと運命の寵児
 킷토 운메이노 쵸지
 분명 운명의 총아
 
@@ -2216,13 +2242,15 @@ Q.E.D.
 눈도 마주치지 못하겠어
 
 (출처 : https://namu.wiki/w/%EB%8B%B9%EC%8B%A0%EB%B0%96%EC%97%90%20%EB%B3%B4%EC%9D%B4%EC%A7%80%20%EC%95%8A%EC%95%84)`
-            },
-            {
-                id: 14,
-                title: "황혼 속의 아이",
-                artist: "유쿠에렛토",
-                link: "https://www.youtube.com/watch?v=oP2BHLvuIXI",
-                lyrics: `本の音が 届かない日から
+    },
+    {
+        id: 14,
+        title: "황혼 속의 아이",
+        artist: "유쿠에렛토",
+        link: "https://www.youtube.com/watch?v=oP2BHLvuIXI",
+        hashtags: [],
+        comment: "",
+        lyrics: `本の音が 届かない日から
 혼노 오토가 토도카나이 히카라
 진심이 닿지 않게 된 그날부터
 
@@ -2451,13 +2479,15 @@ Q.E.D.
 착한 아이네
 
 (출처 : https://www.postype.com/@joo-cms/post/17843715 )`
-            },
-            {
-                id: 15,
-                title: "뜻대로",
-                artist: "r-906(dongdang 커버 )",
-                link: "https://www.youtube.com/watch?v=iGO_6gb0gkw",
-                lyrics: `きっとキミは狂ってんだ
+    },
+    {
+        id: 15,
+        title: "뜻대로",
+        artist: "r-906(dongdang 커버 )",
+        link: "https://www.youtube.com/watch?v=iGO_6gb0gkw",
+        hashtags: [],
+        comment: "",
+        lyrics: `きっとキミは狂ってんだ
 킷토 키미와 쿠룻텐다
 분명 너는 미쳐 있는 거야
 
@@ -2621,13 +2651,15 @@ Q.E.D.
 그대로 아무 말도 하지 말아 줘
 
 ( 출처 : https://namu.wiki/w/%EB%9C%BB%EB%8C%80%EB%A1%9C )`
-            },
-            {
-                id: 16,
-                title: "부처님",
-                artist: "RADWIMPS( 마후마후 커버 )",
-                link: "https://www.youtube.com/watch?v=zaYeKesLkkg",
-                lyrics: `
+    },
+    {
+        id: 16,
+        title: "부처님",
+        artist: "RADWIMPS( 마후마후 커버 )",
+        link: "https://www.youtube.com/watch?v=zaYeKesLkkg",
+        hashtags: [],
+        comment: "",
+        lyrics: `
 カラスが増えたから殺します
 카라스가 후에타카라 코로시마스
 까마귀가 늘었으니까 죽이겠습니다
@@ -2847,13 +2879,15 @@ Q.E.D.
 위도 아래도 아닌 옆이라도 길은 있어
 
 ( 출처 : https://namu.wiki/w/%E3%81%8A%E3%81%97%E3%82%83%E3%81%8B%E3%81%97%E3%82%83%E3%81%BE )`
-            },
-            {
-                id: 17,
-                title: "발레리코",
-                artist: "미키토P (96네코 커버 )",
-                link: "https://www.youtube.com/watch?v=GSa5rBjwcfA",
-                lyrics: `純情少女と勘違いされて　全校男子に狙われた
+    },
+    {
+        id: 17,
+        title: "발레리코",
+        artist: "미키토P (96네코 커버 )",
+        link: "https://www.youtube.com/watch?v=GSa5rBjwcfA",
+        hashtags: [],
+        comment: "",
+        lyrics: `純情少女と勘違いされて　全校男子に狙われた
 쥰죠-쇼-죠토 칸치가이사레테　젠코-단시니 네라와레타
 순정소녀라고 오해받아서 전교의 남자에게 노려졌어
 
@@ -2994,13 +3028,15 @@ Q.E.D.
 실내화 신은 채로　쉘 위 댄스
 
 ( 출처 : https://namu.wiki/w/%EB%B0%9C%EB%A0%88%EB%A6%AC%EC%BD%94 )`
-            },
-            {
-                id: 18,
-                title: "반역의 독침, 테니에라의 추억",
-                artist: "Bonsho-Ne",
-                link: "https://www.youtube.com/watch?v=UeaO9_0w8Pk",
-                lyrics: `ああ、分かたれた世界に仇なすとは。
+    },
+    {
+        id: 18,
+        title: "반역의 독침, 테니에라의 추억",
+        artist: "Bonsho-Ne",
+        link: "https://www.youtube.com/watch?v=UeaO9_0w8Pk",
+        hashtags: [],
+        comment: "",
+        lyrics: `ああ、分かたれた世界に仇なすとは。
 아아, 와카타레타 세카이니 아다나스토와.
 아아, 갈라진 세상에 맞선다는 것은.
 
@@ -3177,13 +3213,15 @@ Q.E.D.
 마땅한 깨어남에 안길 것이다.
 
 ( 출처 : https://arca.live/b/utaitenew/153260814 )`
-            },
-            {
-                id: 19,
-                title: "죽기에는 좋은 날이었어",
-                artist: "피콘 ( dongdang 커버 )",
-                link: "https://www.youtube.com/watch?v=f57IVceA22I",
-                lyrics: `夏のさ花が咲いて嫌になって日和ってた
+    },
+    {
+        id: 19,
+        title: "죽기에는 좋은 날이었어",
+        artist: "피콘 ( dongdang 커버 )",
+        link: "https://www.youtube.com/watch?v=f57IVceA22I",
+        hashtags: [],
+        comment: "",
+        lyrics: `夏のさ花が咲いて嫌になって日和ってた
 나츠노사 하나가 사이테 이야니 낫테 히욧테타
 여름에 말이야 꽃이 피어서 싫어져서 빠져나왔어
 
@@ -3256,14 +3294,15 @@ Q.E.D.
 잘 있어 잊어줘 살아가고 싶어 비참한 채로
 
 ( 출처 : http://vocaro.wikidot.com/it-was-a-good-day-to-die )`
-
-            },
-            {
-                id: 20,
-                title: "Penguin's Detour",
-                artist: "Hayashida ( 獅子神レオナ 커버 )",
-                link: "https://www.youtube.com/watch?v=ABvh8q8Y_mM",
-                lyrics: `すっかり乗り慣れたフライトで今日こそ堕ちてくれないだろうかと
+    },
+    {
+        id: 20,
+        title: "Penguin's Detour",
+        artist: "Hayashida ( 獅子神レオナ 커버 )",
+        link: "https://www.youtube.com/watch?v=ABvh8q8Y_mM",
+        hashtags: [],
+        comment: "",
+        lyrics: `すっかり乗り慣れたフライトで今日こそ堕ちてくれないだろうかと
 슷카리 노리나레타 후라이토데 쿄오코소 오치테쿠레 나이다로오카토
 완전히 익숙해진 비행에 오늘에야말로 추락해주지 않을까하고
 
@@ -3424,13 +3463,15 @@ Q.E.D.
 그저, 에둘러서라도 전해지는 게 있으면 돼
 
 ( 출처 : https://namu.wiki/w/Penguin's%20Detour )`
-            },
-            {
-                id: 21,
-                title: "평생 함께!",
-                artist: "키타니 타츠야( 다즈비 커버 )",
-                link: "https://www.youtube.com/watch?v=7wBzJGPxA1U",
-                lyrics: `充電器を貸して！
+    },
+    {
+        id: 21,
+        title: "평생 함께!",
+        artist: "키타니 타츠야( 다즈비 커버 )",
+        link: "https://www.youtube.com/watch?v=7wBzJGPxA1U",
+        hashtags: [],
+        comment: "",
+        lyrics: `充電器を貸して！
 쥬우덴키오 카시테
 충전기 빌려줘!
 
@@ -3627,13 +3668,15 @@ A. 방금 잃어버린 그거
 우리 둘만의 악몽에서 계에속 함께야!
 
 ( 출처 : https://m.blog.naver.com/illgomyway/223501673387 )`
-            },
-            {
-                id: 22,
-                title: "All Alone With you",
-                artist: "Egoist",
-                link: "https://youtu.be/mOLdLe9b2Sc",
-                lyrics: `誰かを愛することなんて
+    },
+    {
+        id: 22,
+        title: "All Alone With you",
+        artist: "Egoist",
+        link: "https://youtu.be/mOLdLe9b2Sc",
+        hashtags: [],
+        comment: "훼이크 송이죠 아무래도",
+        lyrics: `誰かを愛することなんて
 다레카오 아이스루 코토난테
 누군가를 사랑하는 일을
 
@@ -3832,13 +3875,15 @@ I will stay with you
 당신과 둘이서
 
 ( 가사 출처 : https://namu.wiki/w/All%20Alone%20With%20You )`
-            },
-            {
-                id: 23,
-                title: "몽유병자는 차안에서",
-                artist: "키타니 타츠야",
-                link: "https://www.youtube.com/watch?v=ymtNhd_3CB8",
-                lyrics: `暗い四畳半の隅で同じ
+    },
+    {
+        id: 23,
+        title: "몽유병자는 차안에서",
+        artist: "키타니 타츠야",
+        link: "https://www.youtube.com/watch?v=ymtNhd_3CB8",
+        hashtags: [],
+        comment: "",
+        lyrics: `暗い四畳半の隅で同じ
 쿠라이 요조오한노 스미데 오나지
 어둡고 좁은 방구석에서 같은
 
@@ -4112,13 +4157,15 @@ I will stay with you
 
 ( 출처 : https://namu.wiki/w/%EB%AA%BD%EC%9C%A0%EB%B3%91%EC%9E%90%EB%8A%94%20%EC%B0%A8%EC%95%88%EC%97%90%EC%84%9C )
 `
-            },
-            {
-                id: 24,
-                title: "마법소녀 행복론",
-                artist: "토마 ( Kradness 커버 )",
-                link: "https://www.youtube.com/watch?v=BqIsWsqMSCQ",
-                lyrics: `いつだって一人で　マルベリカ
+    },
+    {
+        id: 24,
+        title: "마법소녀 행복론",
+        artist: "토마 ( Kradness 커버 )",
+        link: "https://www.youtube.com/watch?v=BqIsWsqMSCQ",
+        hashtags: [],
+        comment: "",
+        lyrics: `いつだって一人で　マルベリカ
 이츠닷테 히토리데 마루베리카
 언제나 혼자서 마르베리카
 
@@ -4323,13 +4370,15 @@ TV도 주간지도, 그래.
 이 세상의 전부를 너에게 물어보고 싶어
 
 ( 출처 : https://namu.wiki/w/%EB%A7%88%EB%B2%95%EC%86%8C%EB%85%80%20%ED%96%89%EB%B3%B5%EB%A1%A0 )`
-            },
-            {
-                id: 25,
-                title: "반추사고",
-                artist: "레루리리 ( 다즈비 커버 )",
-                link: "https://youtu.be/dKjYhNsKsH8",
-                lyrics: `あのとき僕はどうして
+    },
+    {
+        id: 25,
+        title: "반추사고",
+        artist: "레루리리 ( 다즈비 커버 )",
+        link: "https://youtu.be/dKjYhNsKsH8",
+        hashtags: [],
+        comment: "",
+        lyrics: `あのとき僕はどうして
 아노 토키 보쿠와 도오시테
 그때 나는 어째서
 
@@ -4475,13 +4524,15 @@ TV도 주간지도, 그래.
 반추사고가 나를 밤에 녹아들게 해
 
 ( 출처 : http://vocaro.wikidot.com/rumination-thinking )`
-            },
-            {
-                id: 26,
-                title: "Plazma",
-                artist: "요네즈켄시( 나츠메 이츠키 커버 )",
-                link: "https://www.youtube.com/watch?v=p82eDF3FGDc",
-                lyrics: `もしもあの改札かいさつの前まえで
+    },
+    {
+        id: 26,
+        title: "Plazma",
+        artist: "요네즈켄시( 나츠메 이츠키 커버 )",
+        link: "https://www.youtube.com/watch?v=p82eDF3FGDc",
+        hashtags: [],
+        comment: "훼이크 22",
+        lyrics: `もしもあの改札かいさつの前まえで
 모시모 아노 카이사츠노 마에데
 만약 저 개찰구 앞에서
 
@@ -4686,13 +4737,15 @@ TV도 주간지도, 그래.
 빛나고 있어
 
 ( 출처 : https://namu.wiki/w/Plazma#s-4 )`
-            },
-            {
-                id: 27,
-                title: "연명치료",
-                artist: "Neru",
-                link: "https://www.youtube.com/watch?v=8OpCkHWnSrA",
-                lyrics: `体中に麻酔を刺して
+    },
+    {
+        id: 27,
+        title: "연명치료",
+        artist: "Neru",
+        link: "https://www.youtube.com/watch?v=8OpCkHWnSrA",
+        hashtags: [],
+        comment: "",
+        lyrics: `体中に麻酔を刺して
 카라다쥬우니 마스이오 사시테
 온몸에 마취침을 찌르고
 
@@ -4825,13 +4878,15 @@ TV도 주간지도, 그래.
 어때
 
 ( 출처 : https://namu.wiki/w/%EC%97%B0%EB%AA%85%EC%B9%98%EB%A3%8C(VOCALOID%20%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90%20%EA%B3%A1) )`
-            },
-            {
-                id: 28,
-                title: "심혼수",
-                artist: "하루노",
-                link: "https://www.youtube.com/watch?v=YvZc0g7haiE",
-                lyrics: `透明なかたち 噛み潰したって
+    },
+    {
+        id: 28,
+        title: "심혼수",
+        artist: "하루노",
+        link: "https://www.youtube.com/watch?v=YvZc0g7haiE",
+        hashtags: [],
+        comment: "",
+        lyrics: `透明なかたち 噛み潰したって
 토오메이나 카타치 카미츠부시탓테
 투명한 형태를 씹어 뭉개봐도
 
@@ -4920,13 +4975,15 @@ TV도 주간지도, 그래.
 이제 마음은 없지만
 
 ( 출처 : https://namu.wiki/w/%EC%8B%AC%ED%98%BC%EC%88%98 )`
-            },
-            {
-                id: 29,
-                title: "다른별에 가자",
-                artist: "이요와",
-                link: "https://www.youtube.com/watch?v=PubukElqUJw",
-                lyrics: `キャトルミューティレーションのように　恋した
+    },
+    {
+        id: 29,
+        title: "다른별에 가자",
+        artist: "이요와",
+        link: "https://www.youtube.com/watch?v=PubukElqUJw",
+        hashtags: [],
+        comment: "",
+        lyrics: `キャトルミューティレーションのように　恋した
 캬토루뮤티레숀노 요오니 코이시타
 캐틀 뮤틸레이션처럼 사랑했어
 
@@ -5087,14 +5144,15 @@ UFO를 타고 다른 별에 가자, 가자
 이젠 몰라
 
 ( 출처 : https://namu.wiki/w/%EB%8B%A4%EB%A5%B8%20%EB%B3%84%EC%97%90%20%EA%B0%80%EC%9E%90 )`
-
-        },
-            {
-                id: 30,
-                title: "로워",
-                artist: "누유리",
-                link: "https://www.youtube.com/watch?v=3sEptl-psU0",
-                lyrics: `そう簡単な祈りだった　端から
+    },
+    {
+        id: 30,
+        title: "로워",
+        artist: "누유리",
+        link: "https://www.youtube.com/watch?v=3sEptl-psU0",
+        hashtags: [],
+        comment: "",
+        lyrics: `そう簡単な祈りだった　端から
 소- 칸탄나 이노리닷타 하나카라
 그래, 간단한 기원(祈願)이었어 처음부터
 
@@ -5263,13 +5321,15 @@ UFO를 타고 다른 별에 가자, 가자
 바로잡아줘
 
 ( 출처 : https://namu.wiki/w/%EB%A1%9C%EC%9B%8C )`
-            },
-            {
-                id: 31,
-                title: "살다보면",
-                artist: "차지연 ( 구리리 커버 )",
-                link: "https://www.youtube.com/watch?v=yba8gFSCQSU",
-                lyrics: `혼자라 슬퍼하진 않아
+    },
+    {
+        id: 31,
+        title: "살다보면",
+        artist: "차지연 ( 구리리 커버 )",
+        link: "https://www.youtube.com/watch?v=yba8gFSCQSU",
+        hashtags: [],
+        comment: "",
+        lyrics: `혼자라 슬퍼하진 않아
                 
 돌아가신 엄마 말하길
 
@@ -5312,13 +5372,15 @@ UFO를 타고 다른 별에 가자, 가자
 아픈 내 마음 멀리 날아가네
 
 ( 출처 : https://music.bugs.co.kr/track/2080868 )`
-            },
-            {
-                id: 32,
-                title: "지구의 뒷면",
-                artist: "이요와 ( CialA 커버 )",
-                link: "https://www.youtube.com/watch?v=PfiNYi0gw4U",
-                lyrics: `ぬるくなった魚のような目をしている
+    },
+    {
+        id: 32,
+        title: "지구의 뒷면",
+        artist: "이요와 ( CialA 커버 )",
+        link: "https://www.youtube.com/watch?v=PfiNYi0gw4U",
+        hashtags: [],
+        comment: "",
+        lyrics: `ぬるくなった魚のような目をしている
 누루쿠 낫타 사카나노 요오나 메오 시테이루
 미지근해진 생선 같은 눈을 하고 있어
 
@@ -5551,13 +5613,15 @@ UFO를 타고 다른 별에 가자, 가자
 그런 선택이야
 
 ( 출처 : https://namu.wiki/w/%EC%A7%80%EA%B5%AC%EC%9D%98%20%EB%92%B7%EB%A9%B4 )`
-            },
-            {
-                id: 33,
-                title: "Flamingo",
-                artist: "요네즈 켄시 ( 다즈비 커버 )",
-                link: "https://www.youtube.com/watch?v=DRSniq4NnDc",
-                lyrics: `[Intro]
+    },
+    {
+        id: 33,
+        title: "Flamingo",
+        artist: "요네즈 켄시 ( 다즈비 커버 )",
+        link: "https://www.youtube.com/watch?v=DRSniq4NnDc",
+        hashtags: [],
+        comment: "",
+        lyrics: `[Intro]
 Ooh, uh-uh,
 
 
@@ -5683,13 +5747,15 @@ Ooh, uh-uh,
 시들어빠진 거리엔 정이라곤 없네 실실거리네
 
 ( 출처 : https://namu.wiki/w/Flamingo )`
-            },
-            {
-                id: 34,
-                title: "바빌론",
-                artist: "토마 ( 성인남성 3인조 커버 )",
-                link: "https://youtu.be/7NGMGczpXk4?si=2Nb_ybN-3LStU9jP",
-                lyrics: `空中繁華街の雑踏　国境はパステル固め
+    },
+    {
+        id: 34,
+        title: "바빌론",
+        artist: "토마 ( 성인남성 3인조 커버 )",
+        link: "https://youtu.be/7NGMGczpXk4?si=2Nb_ybN-3LStU9jP",
+        hashtags: [],
+        comment: "",
+        lyrics: `空中繁華街の雑踏　国境はパステル固め
 쿠- 츄- 한카가이노 잣토- 콧쿄- 와 파스테루 카타메
 공중번화가의 혼잡 국경은 파스텔 수비
 
@@ -5855,14 +5921,15 @@ Ooh, uh-uh,
 그럼 안녕 내일 또 보자.
 
 ( 출처 : https://namu.wiki/w/%EB%B0%94%EB%B9%8C%EB%A1%A0(VOCALOID%20%EC%98%A4%EB%A6%AC%EC%A7%80%EB%84%90%20%EA%B3%A1) )`
-
-            },
-            {
-                id: 35,
-                title: "아젤리아의 망령",
-                artist: "토마 ( 미야시타 유우 커버 )",
-                link: "https://www.youtube.com/watch?v=op8acITcFt4",
-                lyrics: `そう気高く濁した廃都市みたいな
+    },
+    {
+        id: 35,
+        title: "아젤리아의 망령",
+        artist: "토마 ( 미야시타 유우 커버 )",
+        link: "https://www.youtube.com/watch?v=op8acITcFt4",
+        hashtags: [],
+        comment: "",
+        lyrics: `そう気高く濁した廃都市みたいな
 소우 케다카쿠 니고시타 하이토시미타이나
 그렇게 고상하게 흐린 폐도시같은
 
@@ -6047,14 +6114,15 @@ Ooh, uh-uh,
 사랑조차 모르는 채 계속 살아가네
 
 ( 출처 : https://namu.wiki/w/%EC%95%84%EC%A0%A4%EB%A6%AC%EC%95%84%EC%9D%98%20%EB%A7%9D%EB%A0%B9 )`
-
-            },
-            {
-                id: 36,
-                title: "유령저택의 목매단 소녀",
-                artist: "토마 ( 월피스 카터 커버 )",
-                link: "https://www.youtube.com/watch?v=tqWsoR-MkyU",
-                lyrics: `或る夏、影を伸ばすような夕暮れ
+    },
+    {
+        id: 36,
+        title: "유령저택의 목매단 소녀",
+        artist: "토마 ( 월피스 카터 커버 )",
+        link: "https://www.youtube.com/watch?v=tqWsoR-MkyU",
+        hashtags: [],
+        comment: "",
+        lyrics: `或る夏、影を伸ばすような夕暮れ
 아루 나츠, 카게오 노바스 요오나 유우구레
 어느 여름, 그림자를 늘리는 듯한 해질녘
 
@@ -6235,12 +6303,14 @@ Ooh, uh-uh,
 소녀는 이제 없겠지
 
 출처 : https://namu.wiki/w/%EC%9C%A0%EB%A0%B9%EC%A0%80%ED%83%9D%EC%9D%98%20%EB%AA%A9%EB%A7%A4%EB%8B%A8%20%EC%86%8C%EB%85%80 )`
-            },
+    },
     {
         id: 37,
         title: "magnet",
         artist: "유성P ( 쿠로쿠모 커버 )",
         link: "https://www.youtube.com/watch?v=kz3UgQTCj1c",
+        hashtags: [],
+        comment: "닉네임 유래, 머리에 스쳐지나갔어요.",
         lyrics: `か細い火が心の端に灯る
 카보소이 히가 코코로노 하시니 토모루
 가냘픈 불이 마음 한켠을 밝혀
@@ -6400,6 +6470,8 @@ Ooh, uh-uh,
         title: "Simulacrum",
         artist: "Powerless feat. krage",
         link: "https://www.youtube.com/watch?v=ndcZj5ret3s",
+        hashtags: [],
+        comment: "",
         lyrics: `光の海で纏う煌めき
 히카리노 우미데 마토우 키라메키
 빛의 바다에 감도는 반짝임
@@ -6528,6 +6600,8 @@ Simulacrum
         title: "Idol",
         artist: "YOASOBI",
         link: "https://www.youtube.com/watch?v=ZRtdQ81jPUQ",
+        hashtags: [],
+        comment: "",
         lyrics: `無む敵てきの笑え顔がおで荒あらすメディア
 무테키노 에가오데 아라스 메디아
 무적의 미소로 휩쓰는 미디어
