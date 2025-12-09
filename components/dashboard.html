@@ -6,57 +6,71 @@
         <button class="age-btn" data-age="29">29살</button>
     </div>
 
-    <!-- 메인 프로필 헤더 -->
-    <div class="profile-header">
-        <div class="profile-main-image">
-            <img src="https://ui-avatars.com/api/?name=Character&background=3b82f6&color=fff&size=400" alt="캐릭터" id="char-main-img">
-        </div>
-        <div class="profile-info">
-            <h1 class="profile-name" id="char-name">캐릭터 이름</h1>
-            <p class="profile-name-en" id="char-name-en">Character Name</p>
-            <div class="profile-quote" id="char-quote">
+    <!-- 메인 캐릭터 쇼케이스 -->
+    <div class="character-showcase">
+        <div class="showcase-bg-effects"></div>
+
+        <!-- 좌측: 캐릭터 정보 -->
+        <div class="character-info-left">
+            <h1 class="character-title" id="char-name">캐릭터 이름</h1>
+            <p class="character-subtitle" id="char-name-en">Character Name</p>
+
+            <div class="character-quote" id="char-quote">
                 "캐릭터의 대표 대사나 모토를 여기에 작성합니다."
             </div>
-            <div class="profile-tags" id="char-tags">
+
+            <div class="character-tags" id="char-tags">
                 <span class="profile-tag">#태그1</span>
                 <span class="profile-tag">#태그2</span>
                 <span class="profile-tag">#태그3</span>
             </div>
         </div>
-    </div>
 
-    <!-- 상세 정보 섹션 -->
-    <div class="profile-content">
-        <div class="profile-section">
-            <h2><i data-lucide="user"></i> 기본 정보</h2>
-            <div class="info-grid" id="basic-info-grid"></div>
+        <!-- 중앙: 캐릭터 이미지 -->
+        <div class="character-main">
+            <div class="character-glow"></div>
+            <div class="character-img-wrapper">
+                <img src="https://ui-avatars.com/api/?name=Character&background=3b82f6&color=fff&size=400" alt="캐릭터" id="char-main-img">
+            </div>
         </div>
 
-        <div class="profile-section">
+        <!-- 우측: 기본 정보 -->
+        <div class="character-info-right">
+            <h2 class="info-section-title"><i data-lucide="user"></i> 기본 정보</h2>
+            <div class="info-stats" id="basic-info-grid"></div>
+        </div>
+    </div>
+
+    <!-- 상세 정보 그리드 -->
+    <div class="details-grid">
+        <div class="detail-card">
             <h2><i data-lucide="heart"></i> 성격 & 특징</h2>
             <p id="personality-desc"></p>
             <ul id="personality-traits"></ul>
         </div>
 
-        <div class="profile-section">
+        <div class="detail-card">
             <h2><i data-lucide="book-open"></i> 배경 스토리</h2>
             <div id="backstory-content"></div>
         </div>
+    </div>
 
-        <div class="profile-section">
-            <h2><i data-lucide="image"></i> 갤러리</h2>
-            <div class="profile-gallery" id="gallery-grid"></div>
-        </div>
+    <!-- 갤러리 섹션 -->
+    <div class="gallery-section">
+        <h2><i data-lucide="image"></i> 갤러리</h2>
+        <div class="profile-gallery" id="gallery-grid"></div>
+    </div>
 
-        <div class="profile-section">
-            <h2><i data-lucide="sparkles"></i> 모티프</h2>
-            <p>캐릭터 디자인에 영감을 준 요소들입니다.</p>
-            <div class="motif-grid" id="motif-grid"></div>
-        </div>
+    <!-- 모티프 섹션 -->
+    <div class="motif-section">
+        <h2><i data-lucide="sparkles"></i> 모티프</h2>
+        <p>캐릭터 디자인에 영감을 준 요소들입니다.</p>
+        <div class="motif-grid" id="motif-grid"></div>
+    </div>
 
-        <div class="profile-section">
-            <h2><i data-lucide="link"></i> 관련 링크</h2>
-            <div class="profile-links" id="profile-links"></div>
-        </div>
+    <!-- 링크 섹션 -->
+    <div class="links-section">
+        <h2><i data-lucide="link"></i> 관련 링크</h2>
+        <div class="profile-links" id="profile-links"></div>
     </div>
 </div>
