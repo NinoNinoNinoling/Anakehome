@@ -101,6 +101,17 @@ body { font-family: "Pretendard Variable", sans-serif; background-color: var(--b
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
 .gallery-item:hover img { transform: scale(1.1); }
 
+/* 모티프 */
+.motif-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.motif-item { background-color: rgba(255, 255, 255, 0.03); border-radius: 12px; overflow: hidden; transition: all 0.3s; border: 1px solid transparent; }
+.motif-item:hover { border-color: var(--highlight-color); transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+.motif-image { aspect-ratio: 16/9; overflow: hidden; background-color: #222; }
+.motif-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.motif-item:hover .motif-image img { transform: scale(1.05); }
+.motif-info { padding: 1.25rem; }
+.motif-info h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: white; }
+.motif-info p { font-size: 0.9rem; color: #aaa; line-height: 1.6; }
+
 /* 프로필 링크 */
 .profile-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 .profile-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.5rem; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; color: white; text-decoration: none; transition: all 0.2s; border: 1px solid transparent; }
@@ -144,4 +155,5 @@ body { font-family: "Pretendard Variable", sans-serif; background-color: var(--b
     .profile-name-en { font-size: 1rem; }
     .info-grid { grid-template-columns: 1fr; }
     .profile-gallery { grid-template-columns: 1fr; }
+    .motif-grid { grid-template-columns: 1fr; }
 }
