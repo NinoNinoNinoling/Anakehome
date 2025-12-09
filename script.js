@@ -211,9 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 대시보드 통계 업데이트
-    updateDashboardStats();
-
     // 플레이어 컨트롤
     document.getElementById('btn-play-pause').addEventListener('click', togglePlay);
     document.getElementById('btn-next').addEventListener('click', playNext);
@@ -260,44 +257,3 @@ function switchSection(sectionName) {
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
 }
 
-function updateDashboardStats() {
-    // 총 곡 수
-    document.getElementById('total-songs').textContent = playlistData.length;
-
-    // 총 아티스트 수
-    const uniqueArtists = new Set(playlistData.map(song => song.artist || 'Unknown Artist'));
-    document.getElementById('total-artists').textContent = uniqueArtists.size;
-
-    // 최근 재생 목록 표시
-    updateRecentPlays();
-}
-
-function updateRecentPlays() {
-    const recentContainer = document.getElementById('recent-plays');
-    if (recentPlays.length === 0) {
-        recentContainer.innerHTML = '<p class="empty-message">재생 기록이 없습니다</p>';
-        return;
-    }
-
-    recentContainer.innerHTML = recentPlays.slice(0, 5).map(song => `
-        <div class="recent-item">
-            <img src="${song.cover}" alt="${song.title}">
-            <div class="recent-info">
-                <h4>${song.title}</h4>
-                <p>${song.artist || 'Unknown Artist'}</p>
-            </div>
-        </div>
-    `).join('');
-}
-
-function addToRecentPlays(song) {
-    // 중복 제거
-    recentPlays = recentPlays.filter(s => s.id !== song.id);
-    // 맨 앞에 추가
-    recentPlays.unshift(song);
-    // 최대 10개까지만 저장
-    if (recentPlays.length > 10) {
-        recentPlays = recentPlays.slice(0, 10);
-    }
-    updateRecentPlays();
-}

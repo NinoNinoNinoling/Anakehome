@@ -18,74 +18,94 @@
             <div class="menu-item"><i data-lucide="settings"></i></div>
         </nav>
 
-        <!-- 대시보드 섹션 -->
+        <!-- 대시보드 섹션 (캐릭터 프로필) -->
         <section class="content-section active" id="section-dashboard">
-            <div class="dashboard-container">
-                <div class="dashboard-header">
-                    <h1 class="dashboard-title">Ananke Home</h1>
-                    <p class="dashboard-subtitle">나만의 음악 공간에 오신 것을 환영합니다</p>
+            <div class="profile-container">
+                <!-- 메인 프로필 헤더 -->
+                <div class="profile-header">
+                    <div class="profile-main-image">
+                        <img src="https://ui-avatars.com/api/?name=Character&background=3b82f6&color=fff&size=400" alt="캐릭터" id="char-main-img">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name" id="char-name">캐릭터 이름</h1>
+                        <p class="profile-name-en" id="char-name-en">Character Name</p>
+                        <div class="profile-quote" id="char-quote">
+                            "캐릭터의 대표 대사나 모토를 여기에 작성합니다."
+                        </div>
+                        <div class="profile-tags" id="char-tags">
+                            <span class="profile-tag">#태그1</span>
+                            <span class="profile-tag">#태그2</span>
+                            <span class="profile-tag">#태그3</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="dashboard-grid">
-                    <!-- 퀵 링크 카드 -->
-                    <div class="dashboard-card">
-                        <div class="card-icon"><i data-lucide="link" size="32"></i></div>
-                        <h3>퀵 링크</h3>
-                        <div class="link-list">
-                            <a href="https://youtube.com" target="_blank" class="quick-link">
-                                <i data-lucide="youtube" size="16"></i>
-                                <span>YouTube</span>
-                            </a>
-                            <a href="https://github.com" target="_blank" class="quick-link">
-                                <i data-lucide="github" size="16"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://open.spotify.com" target="_blank" class="quick-link">
-                                <i data-lucide="music" size="16"></i>
-                                <span>Spotify</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 통계 카드 -->
-                    <div class="dashboard-card">
-                        <div class="card-icon"><i data-lucide="bar-chart" size="32"></i></div>
-                        <h3>플레이리스트 현황</h3>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-value" id="total-songs">0</div>
-                                <div class="stat-label">총 곡 수</div>
+                <!-- 상세 정보 섹션 -->
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h2><i data-lucide="user"></i> 기본 정보</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">이름</span>
+                                <span class="info-value">캐릭터 이름</span>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-value" id="total-artists">0</div>
-                                <div class="stat-label">아티스트</div>
+                            <div class="info-item">
+                                <span class="info-label">나이</span>
+                                <span class="info-value">??세</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">성별</span>
+                                <span class="info-value">?</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">종족</span>
+                                <span class="info-value">인간</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 최근 재생 카드 -->
-                    <div class="dashboard-card card-wide">
-                        <div class="card-icon"><i data-lucide="clock" size="32"></i></div>
-                        <h3>최근 재생</h3>
-                        <div id="recent-plays" class="recent-list">
-                            <p class="empty-message">재생 기록이 없습니다</p>
+                    <div class="profile-section">
+                        <h2><i data-lucide="heart"></i> 성격 & 특징</h2>
+                        <p>캐릭터의 성격과 특징에 대한 설명을 작성합니다.</p>
+                        <ul>
+                            <li>특징 1</li>
+                            <li>특징 2</li>
+                            <li>특징 3</li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="book-open"></i> 배경 스토리</h2>
+                        <p>캐릭터의 배경 스토리를 자유롭게 작성합니다.</p>
+                        <p>여러 문단으로 나누어 작성할 수 있습니다.</p>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="image"></i> 갤러리</h2>
+                        <div class="profile-gallery">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" alt="이미지 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400" alt="이미지 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400" alt="이미지 3">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 갤러리 카드 -->
-                    <div class="dashboard-card card-wide">
-                        <div class="card-icon"><i data-lucide="image" size="32"></i></div>
-                        <h3>갤러리</h3>
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" alt="Music">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400" alt="Studio">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400" alt="Headphones">
-                            </div>
+                    <div class="profile-section">
+                        <h2><i data-lucide="link"></i> 관련 링크</h2>
+                        <div class="profile-links">
+                            <a href="#" class="profile-link">
+                                <i data-lucide="external-link"></i>
+                                <span>설정집</span>
+                            </a>
+                            <a href="#" class="profile-link">
+                                <i data-lucide="external-link"></i>
+                                <span>관련 작품</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -134,51 +154,62 @@
             </aside>
         </section>
 
-        <!-- 안내 섹션 -->
+        <!-- About 섹션 -->
         <section class="content-section" id="section-guide">
             <div class="guide-container">
                 <div class="guide-header">
-                    <h1>Ananke Home 사용 안내</h1>
+                    <h1>About</h1>
                 </div>
 
                 <div class="guide-content">
                     <div class="guide-section">
-                        <h2><i data-lucide="home"></i> 대시보드</h2>
-                        <p>메인 화면에서는 플레이리스트 현황, 퀵 링크, 최근 재생 기록을 확인할 수 있습니다.</p>
+                        <h2><i data-lucide="user"></i> 소개</h2>
+                        <p>안녕하세요! 창작 캐릭터와 음악을 사랑하는 크리에이터입니다.</p>
+                        <p>이 공간은 제가 만든 캐릭터들과 좋아하는 음악을 공유하기 위한 개인 페이지입니다.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="heart"></i> 성향 & 취향</h2>
                         <ul>
-                            <li>퀵 링크를 통해 자주 사용하는 사이트에 빠르게 접근</li>
-                            <li>플레이리스트 통계 확인</li>
-                            <li>최근 재생한 곡 보기</li>
+                            <li><strong>그림:</strong> 캐릭터 디자인, 일러스트레이션</li>
+                            <li><strong>음악:</strong> J-POP, 애니메이션 OST, VOCALOID</li>
+                            <li><strong>장르:</strong> 판타지, 현대물, 학원물</li>
+                            <li><strong>좋아하는 것:</strong> 캐릭터 설정 짜기, 세계관 구축</li>
                         </ul>
                     </div>
 
                     <div class="guide-section">
-                        <h2><i data-lucide="list-music"></i> 플레이리스트</h2>
-                        <p>YouTube 기반의 음악 플레이어입니다.</p>
+                        <h2><i data-lucide="palette"></i> 커미션 안내</h2>
+                        <p>캐릭터 디자인 및 일러스트 커미션을 받고 있습니다.</p>
                         <ul>
-                            <li>왼쪽 목록에서 곡을 클릭하여 재생</li>
-                            <li>재생/일시정지, 이전/다음 곡 이동 가능</li>
-                            <li>셔플 및 1곡 반복 기능 지원</li>
-                            <li>오른쪽에서 가사 확인 가능</li>
+                            <li><strong>의뢰 가능:</strong> 캐릭터 디자인, 전신/반신 일러스트</li>
+                            <li><strong>소요 기간:</strong> 약 1-2주 (러프 포함)</li>
+                            <li><strong>문의:</strong> DM 또는 이메일로 연락 주세요</li>
                         </ul>
                     </div>
 
                     <div class="guide-section">
-                        <h2><i data-lucide="info"></i> 기능 안내</h2>
-                        <p>주요 기능들을 소개합니다.</p>
-                        <ul>
-                            <li><strong>해시태그:</strong> 각 곡마다 해시태그로 분류 가능</li>
-                            <li><strong>코멘트:</strong> 곡에 대한 개인적인 메모 추가</li>
-                            <li><strong>가사:</strong> 한글, 일본어, 로마자 등 다양한 형식 지원</li>
-                        </ul>
+                        <h2><i data-lucide="link"></i> Links</h2>
+                        <div class="about-links">
+                            <a href="#" class="about-link">
+                                <i data-lucide="twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="about-link">
+                                <i data-lucide="instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="about-link">
+                                <i data-lucide="mail"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="guide-section">
-                        <h2><i data-lucide="keyboard"></i> 단축키</h2>
-                        <ul>
-                            <li><strong>스페이스바:</strong> 재생/일시정지 (예정)</li>
-                            <li><strong>←/→:</strong> 이전/다음 곡 (예정)</li>
-                        </ul>
+                        <h2><i data-lucide="file-text"></i> 메모</h2>
+                        <p>이 사이트는 GitHub Pages로 호스팅되고 있습니다.</p>
+                        <p>캐릭터와 플레이리스트는 계속 업데이트될 예정입니다.</p>
                     </div>
                 </div>
             </div>
