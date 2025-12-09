@@ -11,51 +11,174 @@
 <body>
     <div class="app-layout">
         <nav class="zone-menu">
-            <div class="menu-item active"><i data-lucide="home"></i></div>
-            <div class="menu-item"><i data-lucide="list-music"></i></div>
-            <div class="menu-item"><i data-lucide="heart"></i></div>
+            <div class="menu-item active" data-section="dashboard"><i data-lucide="home"></i></div>
+            <div class="menu-item" data-section="playlist"><i data-lucide="list-music"></i></div>
+            <div class="menu-item" data-section="guide"><i data-lucide="info"></i></div>
             <div style="flex: 1"></div>
             <div class="menu-item"><i data-lucide="settings"></i></div>
         </nav>
 
-        <aside class="zone-list">
-            <div class="list-header">Ananke Playlist</div>
-            <div class="song-list-container" id="playlist-container"></div>
-        </aside>
-
-        <main class="zone-player" id="player-zone">
-            <img src="" alt="Album Art" class="album-art-large" id="main-album-art">
-            
-            <div class="player-info">
-                <h1 id="main-title">곡을 선택하세요</h1>
-                <p id="main-artist">-</p>
-                
-                <div class="hashtag-container" id="main-hashtags"></div>
-
-                <p id="main-comment" class="player-comment"></p> 
-            </div>
-
-            <div class="progress-container">
-                <span id="current-time">0:00</span>
-                <div class="progress-bar-bg" id="progress-bar-bg">
-                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        <!-- 대시보드 섹션 (캐릭터 프로필) -->
+        <section class="content-section active" id="section-dashboard">
+            <div class="profile-container">
+                <!-- 메인 프로필 헤더 -->
+                <div class="profile-header">
+                    <div class="profile-main-image">
+                        <img src="https://ui-avatars.com/api/?name=Character&background=3b82f6&color=fff&size=400" alt="캐릭터" id="char-main-img">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name" id="char-name">캐릭터 이름</h1>
+                        <p class="profile-name-en" id="char-name-en">Character Name</p>
+                        <div class="profile-quote" id="char-quote">
+                            "캐릭터의 대표 대사나 모토를 여기에 작성합니다."
+                        </div>
+                        <div class="profile-tags" id="char-tags">
+                            <span class="profile-tag">#태그1</span>
+                            <span class="profile-tag">#태그2</span>
+                            <span class="profile-tag">#태그3</span>
+                        </div>
+                    </div>
                 </div>
-                <span id="total-time">0:00</span>
-            </div>
 
-            <div class="controls">
-                <button class="btn-control" id="btn-shuffle"><i data-lucide="shuffle" size="20"></i></button>
-                <button class="btn-control" id="btn-prev"><i data-lucide="skip-back" size="28"></i></button>
-                <button class="btn-control btn-play" id="btn-play-pause"><i data-lucide="play" size="28"></i></button>
-                <button class="btn-control" id="btn-next"><i data-lucide="skip-forward" size="28"></i></button>
-                <button class="btn-control" id="btn-repeat"><i data-lucide="repeat" size="20"></i></button>
-            </div>
-        </main>
+                <!-- 상세 정보 섹션 -->
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h2><i data-lucide="user"></i> 기본 정보</h2>
+                        <div class="info-grid" id="basic-info-grid"></div>
+                    </div>
 
-        <aside class="zone-lyrics">
-            <div class="lyrics-title">Lyrics / Info</div>
-            <div id="lyrics-content">곡을 선택해주세요.</div>
-        </aside>
+                    <div class="profile-section">
+                        <h2><i data-lucide="heart"></i> 성격 & 특징</h2>
+                        <p id="personality-desc"></p>
+                        <ul id="personality-traits"></ul>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="book-open"></i> 배경 스토리</h2>
+                        <div id="backstory-content"></div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="image"></i> 갤러리</h2>
+                        <div class="profile-gallery" id="gallery-grid"></div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="sparkles"></i> 모티프</h2>
+                        <p>캐릭터 디자인에 영감을 준 요소들입니다.</p>
+                        <div class="motif-grid" id="motif-grid"></div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2><i data-lucide="link"></i> 관련 링크</h2>
+                        <div class="profile-links" id="profile-links"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 플레이리스트 섹션 -->
+        <section class="content-section" id="section-playlist">
+            <aside class="zone-list">
+                <div class="list-header">Ananke Playlist</div>
+                <div class="song-list-container" id="playlist-container"></div>
+            </aside>
+
+            <main class="zone-player" id="player-zone">
+                <img src="" alt="Album Art" class="album-art-large" id="main-album-art">
+
+                <div class="player-info">
+                    <h1 id="main-title">곡을 선택하세요</h1>
+                    <p id="main-artist">-</p>
+
+                    <div class="hashtag-container" id="main-hashtags"></div>
+
+                    <p id="main-comment" class="player-comment"></p>
+                </div>
+
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-bg" id="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                    </div>
+                    <span id="total-time">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-control" id="btn-shuffle"><i data-lucide="shuffle" size="20"></i></button>
+                    <button class="btn-control" id="btn-prev"><i data-lucide="skip-back" size="28"></i></button>
+                    <button class="btn-control btn-play" id="btn-play-pause"><i data-lucide="play" size="28"></i></button>
+                    <button class="btn-control" id="btn-next"><i data-lucide="skip-forward" size="28"></i></button>
+                    <button class="btn-control" id="btn-repeat"><i data-lucide="repeat" size="20"></i></button>
+                </div>
+            </main>
+
+            <aside class="zone-lyrics">
+                <div class="lyrics-title">Lyrics / Info</div>
+                <div id="lyrics-content">곡을 선택해주세요.</div>
+            </aside>
+        </section>
+
+        <!-- About 섹션 -->
+        <section class="content-section" id="section-guide">
+            <div class="guide-container">
+                <div class="guide-header">
+                    <h1>About</h1>
+                </div>
+
+                <div class="guide-content">
+                    <div class="guide-section">
+                        <h2><i data-lucide="user"></i> 소개</h2>
+                        <p>안녕하세요! 창작 캐릭터와 음악을 사랑하는 크리에이터입니다.</p>
+                        <p>이 공간은 제가 만든 캐릭터들과 좋아하는 음악을 공유하기 위한 개인 페이지입니다.</p>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="heart"></i> 성향 & 취향</h2>
+                        <ul>
+                            <li><strong>그림:</strong> 캐릭터 디자인, 일러스트레이션</li>
+                            <li><strong>음악:</strong> J-POP, 애니메이션 OST, VOCALOID</li>
+                            <li><strong>장르:</strong> 판타지, 현대물, 학원물</li>
+                            <li><strong>좋아하는 것:</strong> 캐릭터 설정 짜기, 세계관 구축</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="palette"></i> 커미션 안내</h2>
+                        <p>캐릭터 디자인 및 일러스트 커미션을 받고 있습니다.</p>
+                        <ul>
+                            <li><strong>의뢰 가능:</strong> 캐릭터 디자인, 전신/반신 일러스트</li>
+                            <li><strong>소요 기간:</strong> 약 1-2주 (러프 포함)</li>
+                            <li><strong>문의:</strong> DM 또는 이메일로 연락 주세요</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="link"></i> Links</h2>
+                        <div class="about-links">
+                            <a href="#" class="about-link">
+                                <i data-lucide="twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="about-link">
+                                <i data-lucide="instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="about-link">
+                                <i data-lucide="mail"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="file-text"></i> 메모</h2>
+                        <p>이 사이트는 GitHub Pages로 호스팅되고 있습니다.</p>
+                        <p>캐릭터와 플레이리스트는 계속 업데이트될 예정입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <div id="youtube-player-container"></div>
