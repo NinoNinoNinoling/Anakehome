@@ -1,5 +1,6 @@
 import { playlistData } from './data.js';
 import { characterData } from './character.js';
+import { ownerData } from './owner.js';
 
 // 컴포넌트 로더
 async function loadComponent(sectionId, componentPath) {
@@ -234,6 +235,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 캐릭터 프로필 렌더링
     renderCharacterProfile();
 
+    // 개인 프로필 렌더링
+    renderOwnerProfile();
+
     // 섹션 전환 기능
     const menuItems = document.querySelectorAll('.menu-item[data-section]');
     menuItems.forEach(item => {
@@ -347,6 +351,67 @@ function renderCharacterProfile() {
             <span>${link.text}</span>
         </a>`
     ).join('');
+
+    // 아이콘 재렌더링
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+}
+
+function renderOwnerProfile() {
+    const owner = ownerData;
+
+    // 프로필 이미지
+    const profileImg = document.getElementById('owner-profile-img');
+    if (profileImg) profileImg.src = owner.profileImage;
+
+    // 마스코트 이미지
+    const mascotImg = document.getElementById('owner-mascot-img');
+    if (mascotImg) mascotImg.src = owner.mascotImage;
+
+    // 이름
+    const nameDisplay = document.getElementById('owner-name-display');
+    if (nameDisplay) nameDisplay.textContent = owner.nameStyle;
+
+    // 인용구
+    const quote = document.getElementById('owner-quote');
+    if (quote) quote.textContent = `"${owner.quote}"`;
+
+    // 태그
+    const tagsContainer = document.getElementById('owner-tags');
+    if (tagsContainer) {
+        tagsContainer.innerHTML = owner.tags.map(tag =>
+            `<button class="owner-tag">${tag}</button>`
+        ).join('');
+    }
+
+    // 설명
+    const descriptionContainer = document.getElementById('owner-description');
+    if (descriptionContainer) {
+        descriptionContainer.innerHTML = owner.description.map(text =>
+            `<p>${text}</p>`
+        ).join('');
+    }
+
+    // 관심사
+    const interestsGrid = document.getElementById('owner-interests-grid');
+    if (interestsGrid) {
+        interestsGrid.innerHTML = owner.interests.map(interest =>
+            `<div class="interest-item">
+                <span class="interest-label">${interest.label}</span>
+                <span class="interest-value">${interest.value}</span>
+            </div>`
+        ).join('');
+    }
+
+    // 링크
+    const linksContainer = document.getElementById('owner-links');
+    if (linksContainer) {
+        linksContainer.innerHTML = owner.links.map(link =>
+            `<a href="${link.url}" class="owner-link" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="${link.icon}"></i>
+                <span>${link.text}</span>
+            </a>`
+        ).join('');
+    }
 
     // 아이콘 재렌더링
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);

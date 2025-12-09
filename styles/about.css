@@ -1,105 +1,286 @@
 /* About 섹션 */
 #section-guide {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.guide-container {
+.owner-profile-container {
     flex: 1;
     overflow-y: auto;
     padding: 3rem;
     background-color: var(--bg-color);
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 프로필 카드 */
+.owner-card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* 마스코트 (우측 상단) */
+.owner-mascot {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 100px;
+    height: 100px;
+}
+
+.owner-mascot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* 워터마크 */
+.owner-watermark {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* 프로필 이미지 */
+.owner-profile-image {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin-top: 1rem;
+}
+
+.owner-profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.9);
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* 인용구 말풍선 */
+.owner-quote-bubble {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    position: relative;
+    max-width: 80%;
+}
+
+.owner-quote-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.95);
+}
+
+.owner-quote-bubble p {
+    color: #333;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 이름 섹션 */
+.owner-name-section {
+    text-align: center;
+}
+
+.owner-name-section h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* 태그 */
+.owner-tags {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.owner-tag {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+}
+
+.owner-tag:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Owner About 섹션 */
+.owner-about-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    color: #333;
+}
+
+.owner-about-section h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.owner-description p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+/* 관심사 섹션 */
+.owner-interests-section {
     width: 100%;
 }
 
-.guide-header {
-    text-align: center;
-    margin-bottom: 3rem;
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.guide-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.guide-content {
+.interest-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
 }
 
-.guide-section {
-    background-color: var(--surface-color);
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 2rem;
-}
-
-.guide-section h2 {
-    font-size: 1.4rem;
+.interest-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.interest-value {
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* 링크 섹션 */
+.owner-links-section {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.owner-links-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--highlight-color);
 }
 
-.guide-section p {
-    color: #ccc;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.guide-section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.guide-section li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: #aaa;
-    line-height: 1.6;
-}
-
-.guide-section li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--highlight-color);
-    font-weight: bold;
-}
-
-/* About 링크 */
-.about-links {
+.owner-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 }
 
-.about-link {
+.owner-link {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
     color: white;
     text-decoration: none;
     transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
 }
 
-.about-link:hover {
-    background-color: rgba(59, 130, 246, 0.2);
+.owner-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
 }
 
 /* 반응형 - About */
 @media (max-width: 768px) {
-    .guide-container {
+    .owner-profile-container {
         padding: 1.5rem;
+    }
+
+    .owner-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .owner-mascot {
+        width: 70px;
+        height: 70px;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .owner-profile-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .owner-name-section h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .owner-quote-bubble {
+        max-width: 90%;
     }
 }
