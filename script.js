@@ -6,6 +6,7 @@ let player = null;
 let progressInterval = null;
 let playerReady = false;
 let isRepeatOne = false;
+let recentPlays = [];
 
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -136,6 +137,9 @@ function playSpecificSong(index) {
     if(player && playerReady && playlistData[index].youtubeId) {
         player.loadVideoById(playlistData[index].youtubeId);
         setTimeout(() => player.playVideo(), 100);
+
+        // 최근 재생 목록에 추가
+        addToRecentPlays(playlistData[index]);
     }
 }
 
@@ -197,6 +201,20 @@ function formatTime(seconds) {
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 100);
+
+    // 섹션 전환 기능
+    const menuItems = document.querySelectorAll('.menu-item[data-section]');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const sectionName = item.getAttribute('data-section');
+            switchSection(sectionName);
+        });
+    });
+
+    // 대시보드 통계 업데이트
+    updateDashboardStats();
+
+    // 플레이어 컨트롤
     document.getElementById('btn-play-pause').addEventListener('click', togglePlay);
     document.getElementById('btn-next').addEventListener('click', playNext);
     document.getElementById('btn-prev').addEventListener('click', playPrev);
@@ -214,3 +232,72 @@ document.addEventListener('DOMContentLoaded', () => {
         player.seekTo(player.getDuration() * percent, true);
     });
 });
+
+function switchSection(sectionName) {
+    // 모든 섹션 숨기기
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // 모든 메뉴 아이템 비활성화
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // 선택된 섹션 표시
+    const targetSection = document.getElementById(`section-${sectionName}`);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+
+    // 선택된 메뉴 아이템 활성화
+    const targetMenuItem = document.querySelector(`.menu-item[data-section="${sectionName}"]`);
+    if (targetMenuItem) {
+        targetMenuItem.classList.add('active');
+    }
+
+    // 아이콘 재렌더링
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+}
+
+function updateDashboardStats() {
+    // 총 곡 수
+    document.getElementById('total-songs').textContent = playlistData.length;
+
+    // 총 아티스트 수
+    const uniqueArtists = new Set(playlistData.map(song => song.artist || 'Unknown Artist'));
+    document.getElementById('total-artists').textContent = uniqueArtists.size;
+
+    // 최근 재생 목록 표시
+    updateRecentPlays();
+}
+
+function updateRecentPlays() {
+    const recentContainer = document.getElementById('recent-plays');
+    if (recentPlays.length === 0) {
+        recentContainer.innerHTML = '<p class="empty-message">재생 기록이 없습니다</p>';
+        return;
+    }
+
+    recentContainer.innerHTML = recentPlays.slice(0, 5).map(song => `
+        <div class="recent-item">
+            <img src="${song.cover}" alt="${song.title}">
+            <div class="recent-info">
+                <h4>${song.title}</h4>
+                <p>${song.artist || 'Unknown Artist'}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+function addToRecentPlays(song) {
+    // 중복 제거
+    recentPlays = recentPlays.filter(s => s.id !== song.id);
+    // 맨 앞에 추가
+    recentPlays.unshift(song);
+    // 최대 10개까지만 저장
+    if (recentPlays.length > 10) {
+        recentPlays = recentPlays.slice(0, 10);
+    }
+    updateRecentPlays();
+}

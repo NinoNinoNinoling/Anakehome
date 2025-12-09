@@ -11,51 +11,178 @@
 <body>
     <div class="app-layout">
         <nav class="zone-menu">
-            <div class="menu-item active"><i data-lucide="home"></i></div>
-            <div class="menu-item"><i data-lucide="list-music"></i></div>
-            <div class="menu-item"><i data-lucide="heart"></i></div>
+            <div class="menu-item active" data-section="dashboard"><i data-lucide="home"></i></div>
+            <div class="menu-item" data-section="playlist"><i data-lucide="list-music"></i></div>
+            <div class="menu-item" data-section="guide"><i data-lucide="info"></i></div>
             <div style="flex: 1"></div>
             <div class="menu-item"><i data-lucide="settings"></i></div>
         </nav>
 
-        <aside class="zone-list">
-            <div class="list-header">Ananke Playlist</div>
-            <div class="song-list-container" id="playlist-container"></div>
-        </aside>
-
-        <main class="zone-player" id="player-zone">
-            <img src="" alt="Album Art" class="album-art-large" id="main-album-art">
-            
-            <div class="player-info">
-                <h1 id="main-title">곡을 선택하세요</h1>
-                <p id="main-artist">-</p>
-                
-                <div class="hashtag-container" id="main-hashtags"></div>
-
-                <p id="main-comment" class="player-comment"></p> 
-            </div>
-
-            <div class="progress-container">
-                <span id="current-time">0:00</span>
-                <div class="progress-bar-bg" id="progress-bar-bg">
-                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        <!-- 대시보드 섹션 -->
+        <section class="content-section active" id="section-dashboard">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1 class="dashboard-title">Ananke Home</h1>
+                    <p class="dashboard-subtitle">나만의 음악 공간에 오신 것을 환영합니다</p>
                 </div>
-                <span id="total-time">0:00</span>
-            </div>
 
-            <div class="controls">
-                <button class="btn-control" id="btn-shuffle"><i data-lucide="shuffle" size="20"></i></button>
-                <button class="btn-control" id="btn-prev"><i data-lucide="skip-back" size="28"></i></button>
-                <button class="btn-control btn-play" id="btn-play-pause"><i data-lucide="play" size="28"></i></button>
-                <button class="btn-control" id="btn-next"><i data-lucide="skip-forward" size="28"></i></button>
-                <button class="btn-control" id="btn-repeat"><i data-lucide="repeat" size="20"></i></button>
-            </div>
-        </main>
+                <div class="dashboard-grid">
+                    <!-- 퀵 링크 카드 -->
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i data-lucide="link" size="32"></i></div>
+                        <h3>퀵 링크</h3>
+                        <div class="link-list">
+                            <a href="https://youtube.com" target="_blank" class="quick-link">
+                                <i data-lucide="youtube" size="16"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="quick-link">
+                                <i data-lucide="github" size="16"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://open.spotify.com" target="_blank" class="quick-link">
+                                <i data-lucide="music" size="16"></i>
+                                <span>Spotify</span>
+                            </a>
+                        </div>
+                    </div>
 
-        <aside class="zone-lyrics">
-            <div class="lyrics-title">Lyrics / Info</div>
-            <div id="lyrics-content">곡을 선택해주세요.</div>
-        </aside>
+                    <!-- 통계 카드 -->
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i data-lucide="bar-chart" size="32"></i></div>
+                        <h3>플레이리스트 현황</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-value" id="total-songs">0</div>
+                                <div class="stat-label">총 곡 수</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="total-artists">0</div>
+                                <div class="stat-label">아티스트</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 최근 재생 카드 -->
+                    <div class="dashboard-card card-wide">
+                        <div class="card-icon"><i data-lucide="clock" size="32"></i></div>
+                        <h3>최근 재생</h3>
+                        <div id="recent-plays" class="recent-list">
+                            <p class="empty-message">재생 기록이 없습니다</p>
+                        </div>
+                    </div>
+
+                    <!-- 갤러리 카드 -->
+                    <div class="dashboard-card card-wide">
+                        <div class="card-icon"><i data-lucide="image" size="32"></i></div>
+                        <h3>갤러리</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" alt="Music">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400" alt="Studio">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400" alt="Headphones">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 플레이리스트 섹션 -->
+        <section class="content-section" id="section-playlist">
+            <aside class="zone-list">
+                <div class="list-header">Ananke Playlist</div>
+                <div class="song-list-container" id="playlist-container"></div>
+            </aside>
+
+            <main class="zone-player" id="player-zone">
+                <img src="" alt="Album Art" class="album-art-large" id="main-album-art">
+
+                <div class="player-info">
+                    <h1 id="main-title">곡을 선택하세요</h1>
+                    <p id="main-artist">-</p>
+
+                    <div class="hashtag-container" id="main-hashtags"></div>
+
+                    <p id="main-comment" class="player-comment"></p>
+                </div>
+
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-bg" id="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                    </div>
+                    <span id="total-time">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-control" id="btn-shuffle"><i data-lucide="shuffle" size="20"></i></button>
+                    <button class="btn-control" id="btn-prev"><i data-lucide="skip-back" size="28"></i></button>
+                    <button class="btn-control btn-play" id="btn-play-pause"><i data-lucide="play" size="28"></i></button>
+                    <button class="btn-control" id="btn-next"><i data-lucide="skip-forward" size="28"></i></button>
+                    <button class="btn-control" id="btn-repeat"><i data-lucide="repeat" size="20"></i></button>
+                </div>
+            </main>
+
+            <aside class="zone-lyrics">
+                <div class="lyrics-title">Lyrics / Info</div>
+                <div id="lyrics-content">곡을 선택해주세요.</div>
+            </aside>
+        </section>
+
+        <!-- 안내 섹션 -->
+        <section class="content-section" id="section-guide">
+            <div class="guide-container">
+                <div class="guide-header">
+                    <h1>Ananke Home 사용 안내</h1>
+                </div>
+
+                <div class="guide-content">
+                    <div class="guide-section">
+                        <h2><i data-lucide="home"></i> 대시보드</h2>
+                        <p>메인 화면에서는 플레이리스트 현황, 퀵 링크, 최근 재생 기록을 확인할 수 있습니다.</p>
+                        <ul>
+                            <li>퀵 링크를 통해 자주 사용하는 사이트에 빠르게 접근</li>
+                            <li>플레이리스트 통계 확인</li>
+                            <li>최근 재생한 곡 보기</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="list-music"></i> 플레이리스트</h2>
+                        <p>YouTube 기반의 음악 플레이어입니다.</p>
+                        <ul>
+                            <li>왼쪽 목록에서 곡을 클릭하여 재생</li>
+                            <li>재생/일시정지, 이전/다음 곡 이동 가능</li>
+                            <li>셔플 및 1곡 반복 기능 지원</li>
+                            <li>오른쪽에서 가사 확인 가능</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="info"></i> 기능 안내</h2>
+                        <p>주요 기능들을 소개합니다.</p>
+                        <ul>
+                            <li><strong>해시태그:</strong> 각 곡마다 해시태그로 분류 가능</li>
+                            <li><strong>코멘트:</strong> 곡에 대한 개인적인 메모 추가</li>
+                            <li><strong>가사:</strong> 한글, 일본어, 로마자 등 다양한 형식 지원</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-section">
+                        <h2><i data-lucide="keyboard"></i> 단축키</h2>
+                        <ul>
+                            <li><strong>스페이스바:</strong> 재생/일시정지 (예정)</li>
+                            <li><strong>←/→:</strong> 이전/다음 곡 (예정)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <div id="youtube-player-container"></div>
