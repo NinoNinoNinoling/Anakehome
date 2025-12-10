@@ -3,48 +3,56 @@ export const characterProfiles = {
     11: {
         // 프로필 헤더
         profile: {
-            image: "https://ui-avatars.com/api/?name=Child&background=ff6b9d&color=fff&size=400",
-            name: "캐릭터 이름 (11살)",
-            nameEn: "Character Name - Age 11",
-            quote: "아직 꿈이 많은 11살의 순수한 대사를 여기에 작성합니다.",
-            tags: ["#어린시절", "#순수", "#호기심"]
+            image: "https://ui-avatars.com/api/?name=Morrison+Bell+Liar&background=FFD800&color=000&size=400",
+            name: "모리슨 벨 라이어 (11살)",
+            nameEn: "Morrison Bell Liar - Age 11",
+            quote: "데자뷔....",
+            tags: ["#무신경", "#무반응", "#무감각"]
         },
 
         // 기본 정보
         basicInfo: [
-            { label: "이름", value: "캐릭터 이름" },
-            { label: "나이", value: "11세" },
-            { label: "성별", value: "?" },
-            { label: "종족", value: "인간" }
+            { label: "이름", value: "모리슨 벨 라이어" },
+            { label: "생일", value: "11월 29일" },
+            { label: "나이", value: "11세 (1학년)" },
+            { label: "키 / 몸무게", value: "130cm / 25kg" },
+            { label: "기숙사", value: "후플푸프" },
+            { label: "국적", value: "아일랜드" },
+            { label: "혈통", value: "머글 혈통" },
+            { label: "지팡이", value: "아카시아, 유니콘의 털, 7.75인치, 딱딱한" }
         ],
 
         // 성격 & 특징
         personality: {
-            description: "11살 캐릭터의 순수하고 호기심 많은 성격을 작성합니다.",
+            description: "무신경하고 무반응, 무감각한 성격. 제 1명제 - 定 모든 미래는 불변한다.",
             traits: [
-                "순수하고 밝은 성격",
-                "모든 것에 호기심이 많음",
-                "친구들과 놀기를 좋아함"
+                "무신경하고 반응이 없는 성격",
+                "감정 표현이 거의 없음",
+                "데자뷔를 자주 경험하는 듯한 행동",
+                "탄생화: 바카리스 | 탄생석: 알렉산드라이트 토르마린",
+                "탄생목: 사시나무 | 탄생색: 블록 레드"
             ]
         },
 
         // 배경 스토리
         backstory: [
-            "11살 캐릭터의 어린 시절 배경 스토리를 작성합니다.",
-            "학교 생활과 가족 이야기 등을 포함할 수 있습니다."
+            "아일랜드 출신의 머글 태생 마법사로, 호그와트 1학년에 입학했습니다.",
+            "후플푸프 기숙사에 배정되었지만, 특유의 무감각한 성격 때문에 다른 학생들과는 조금 다른 모습을 보입니다.",
+            "'모든 미래는 불변한다'는 자신만의 명제를 가지고 있으며, 자주 데자뷔를 경험하는 것처럼 행동합니다.",
+            "아카시아 나무와 유니콘의 털로 만들어진 7.75인치의 딱딱한 지팡이를 사용합니다."
         ],
 
         // 관계
         relationships: [
-            { name: "부모님", description: "따뜻한 가정에서 자라고 있습니다." },
-            { name: "친한 친구", description: "같은 반 친구들과 매일 함께 놉니다." },
-            { name: "선생님", description: "학교 선생님을 존경하고 따릅니다." }
+            { name: "후플푸프 기숙사", description: "성실함과 헌신을 중시하는 후플푸프에 속해 있습니다." },
+            { name: "동급생들", description: "무반응한 태도로 인해 거리를 두지만, 나쁘지 않은 관계를 유지합니다." },
+            { name: "마법사 가족", description: "머글 태생으로 마법 세계에 처음 발을 들였습니다." }
         ],
 
         // 배경 음악
         bgMusic: {
-            youtubeId: "dQw4w9WgXcQ", // YouTube 비디오 ID를 입력하세요
-            title: "11살 테마곡"
+            youtubeId: "dQw4w9WgXcQ", // "없어, 없어 (니노마에 이나이스 커버)" YouTube ID를 입력하세요
+            title: "없어, 없어 (니노마에 이나이스 커버)"
         },
 
         // 갤러리
