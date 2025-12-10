@@ -443,6 +443,39 @@ function renderOwnerProfile() {
         ).join('');
     }
 
+    // 교류 정보
+    const communicationGrid = document.getElementById('owner-communication');
+    if (communicationGrid && owner.communication) {
+        communicationGrid.innerHTML = owner.communication.map(item =>
+            `<div class="owner-info-item">
+                <span class="owner-info-label">${item.label}</span>
+                <span class="owner-info-value">${item.value}</span>
+            </div>`
+        ).join('');
+    }
+
+    // 연락 & 조율
+    const contactGrid = document.getElementById('owner-contact');
+    if (contactGrid && owner.contact) {
+        contactGrid.innerHTML = owner.contact.map(item =>
+            `<div class="owner-info-item">
+                <span class="owner-info-label">${item.label}</span>
+                <span class="owner-info-value">${item.value}</span>
+            </div>`
+        ).join('');
+    }
+
+    // 연성 정보
+    const fanworkGrid = document.getElementById('owner-fanwork');
+    if (fanworkGrid && owner.fanwork) {
+        fanworkGrid.innerHTML = owner.fanwork.map(item =>
+            `<div class="owner-info-item">
+                <span class="owner-info-label">${item.label}</span>
+                <span class="owner-info-value">${item.value}</span>
+            </div>`
+        ).join('');
+    }
+
     // 링크
     const linksContainer = document.getElementById('owner-links');
     if (linksContainer) {
