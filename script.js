@@ -344,7 +344,15 @@ function renderCharacterProfile(age = currentAge) {
 
     // 프로필 헤더
     document.getElementById('char-main-img').src = char.profile.image;
-    document.getElementById('char-catchphrase').textContent = char.profile.catchphrase;
+
+    // 캐치프레이즈 3단 구조 렌더링
+    const catchphraseEl = document.getElementById('char-catchphrase');
+    catchphraseEl.innerHTML = `
+        <div class="catchphrase-top">${char.profile.catchphrase.top}</div>
+        <div class="catchphrase-main">${char.profile.catchphrase.main}</div>
+        <div class="catchphrase-bottom">${char.profile.catchphrase.bottom}</div>
+    `;
+
     document.getElementById('char-name').textContent = char.profile.name;
     document.getElementById('char-name-en').textContent = char.profile.nameEn;
     document.getElementById('char-quote').textContent = `"${char.profile.quote}"`;
