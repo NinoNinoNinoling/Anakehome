@@ -258,24 +258,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 모티프 렌더링
     renderMotifPage();
 
-    // 나이 선택 버튼 이벤트 리스너
-    const ageBtns = document.querySelectorAll('.age-btn');
-    ageBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const selectedAge = parseInt(btn.getAttribute('data-age'));
-            currentAge = selectedAge;
+    // 나이 선택 버튼 이벤트 리스너 (컴포넌트 로드 후 약간의 지연)
+    setTimeout(() => {
+        const ageBtns = document.querySelectorAll('.age-btn');
+        ageBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selectedAge = parseInt(btn.getAttribute('data-age'));
+                currentAge = selectedAge;
 
-            // 버튼 활성화 상태 변경
-            ageBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+                // 버튼 활성화 상태 변경
+                ageBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-            // 프로필 다시 렌더링
-            renderCharacterProfile(selectedAge);
+                // 프로필 다시 렌더링
+                renderCharacterProfile(selectedAge);
 
-            // 배경 음악 업데이트
-            updateDashboardBgMusic(selectedAge);
+                // 배경 음악 업데이트
+                updateDashboardBgMusic(selectedAge);
+            });
         });
-    });
+    }, 200);
 
     // 섹션 전환 기능
     const menuItems = document.querySelectorAll('.menu-item[data-section]');
@@ -390,9 +392,18 @@ function renderCharacterProfile(age = currentAge) {
 
     // 성격 & 특징
     document.getElementById('personality-desc').textContent = char.personality.description;
-    document.getElementById('personality-traits').innerHTML = char.personality.traits.map(trait =>
-        `<li>${trait}</li>`
-    ).join('');
+
+    // traits는 선택사항 (있으면 렌더링, 없으면 빈 문자열)
+    const traitsEl = document.getElementById('personality-traits');
+    if (char.personality.traits && char.personality.traits.length > 0) {
+        traitsEl.innerHTML = char.personality.traits.map(trait =>
+            `<li>${trait}</li>`
+        ).join('');
+        traitsEl.style.display = 'block';
+    } else {
+        traitsEl.innerHTML = '';
+        traitsEl.style.display = 'none';
+    }
 
     // 배경 스토리
     document.getElementById('backstory-content').innerHTML = char.backstory.map(paragraph =>
