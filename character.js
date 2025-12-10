@@ -83,8 +83,8 @@ export const characterProfiles = {
         links: [
             {
                 icon: "external-link",
-                text: "11살 설정집",
-                url: "#"
+                text: "프로필",
+                url: "https://docs.google.com/document/d/1SKDKcVinYIDvQbaD78O6YrXuPe-jx4L9KnJAOIpjcdI/edit?tab=t.0"
             },
             {
                 icon: "external-link",
@@ -181,8 +181,8 @@ export const characterProfiles = {
         links: [
             {
                 icon: "external-link",
-                text: "17살 설정집",
-                url: "#"
+                text: "프로필",
+                url: "https://docs.google.com/document/d/1SKDKcVinYIDvQbaD78O6YrXuPe-jx4L9KnJAOIpjcdI/edit?tab=t.rdir92x2dut4"
             },
             {
                 icon: "external-link",
@@ -281,8 +281,8 @@ export const characterProfiles = {
         links: [
             {
                 icon: "external-link",
-                text: "29살 설정집",
-                url: "#"
+                text: "프로필",
+                url: "https://docs.google.com/document/d/1SKDKcVinYIDvQbaD78O6YrXuPe-jx4L9KnJAOIpjcdI/edit?tab=t.6cyhwu305573"
             },
             {
                 icon: "external-link",
