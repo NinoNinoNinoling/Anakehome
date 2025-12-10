@@ -50,25 +50,6 @@ export const characterProfiles = {
             }
         ],
 
-        // 모티프
-        motifs: [
-            {
-                image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400",
-                title: "어린 시절의 꿈",
-                description: "11살의 순수한 꿈과 희망을 표현한 모티프"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400",
-                title: "가족과 친구",
-                description: "소중한 사람들과의 관계"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400",
-                title: "밝은 색감",
-                description: "활기차고 밝은 어린 시절을 표현"
-            }
-        ],
-
         // 관련 링크
         links: [
             {
@@ -134,25 +115,6 @@ export const characterProfiles = {
             }
         ],
 
-        // 모티프
-        motifs: [
-            {
-                image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400",
-                title: "청춘의 고민",
-                description: "17살의 방황과 고민을 표현한 모티프"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400",
-                title: "성장통",
-                description: "어른이 되어가는 과정의 아픔과 기쁨"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400",
-                title: "감성적인 분위기",
-                description: "예민하고 감성적인 청소년기를 표현"
-            }
-        ],
-
         // 관련 링크
         links: [
             {
@@ -215,25 +177,6 @@ export const characterProfiles = {
             {
                 image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
                 alt: "29살 이미지 3"
-            }
-        ],
-
-        // 모티프
-        motifs: [
-            {
-                image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400",
-                title: "성숙한 인생관",
-                description: "29살의 성숙하고 안정된 가치관을 표현"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400",
-                title: "커리어와 목표",
-                description: "직업적 성취와 인생 목표"
-            },
-            {
-                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400",
-                title: "세련된 스타일",
-                description: "성숙하고 세련된 성인의 이미지"
             }
         ],
 

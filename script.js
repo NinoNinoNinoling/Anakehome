@@ -1,6 +1,7 @@
 import { playlistData } from './data.js';
 import { characterData, characterProfiles } from './character.js';
 import { ownerData } from './owner.js';
+import { motifData } from './motif.js';
 
 // 현재 선택된 나이
 let currentAge = 11;
@@ -21,6 +22,7 @@ async function loadAllComponents() {
     await Promise.all([
         loadComponent('section-dashboard', 'components/dashboard.html'),
         loadComponent('section-playlist', 'components/playlist.html'),
+        loadComponent('section-motif', 'components/motif.html'),
         loadComponent('section-guide', 'components/about.html')
     ]);
 
@@ -241,6 +243,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 개인 프로필 렌더링
     renderOwnerProfile();
 
+    // 모티프 렌더링
+    renderMotifPage();
+
     // 나이 선택 버튼 이벤트 리스너
     const ageBtns = document.querySelectorAll('.age-btn');
     ageBtns.forEach(btn => {
@@ -350,19 +355,6 @@ function renderCharacterProfile(age = currentAge) {
         </div>`
     ).join('');
 
-    // 모티프
-    document.getElementById('motif-grid').innerHTML = char.motifs.map(motif =>
-        `<div class="motif-item">
-            <div class="motif-image">
-                <img src="${motif.image}" alt="${motif.title}">
-            </div>
-            <div class="motif-info">
-                <h3>${motif.title}</h3>
-                <p>${motif.description}</p>
-            </div>
-        </div>`
-    ).join('');
-
     // 관련 링크
     document.getElementById('profile-links').innerHTML = char.links.map(link =>
         `<a href="${link.url}" class="profile-link">
@@ -436,3 +428,22 @@ function renderOwnerProfile() {
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
 }
 
+function renderMotifPage() {
+    const motifGrid = document.getElementById('motif-main-grid');
+    if (!motifGrid) return;
+
+    motifGrid.innerHTML = motifData.map(motif =>
+        `<div class="motif-main-item">
+            <div class="motif-main-image">
+                <img src="${motif.image}" alt="${motif.title}">
+            </div>
+            <div class="motif-main-info">
+                <h3>${motif.title}</h3>
+                <p>${motif.description}</p>
+            </div>
+        </div>`
+    ).join('');
+
+    // 아이콘 재렌더링
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+}

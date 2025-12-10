@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="styles/dashboard.css">
     <link rel="stylesheet" href="styles/playlist.css">
     <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/motif.css">
 </head>
 <body>
     <div class="app-layout">
         <nav class="zone-menu">
             <div class="menu-item active" data-section="dashboard"><i data-lucide="home"></i></div>
             <div class="menu-item" data-section="playlist"><i data-lucide="list-music"></i></div>
+            <div class="menu-item" data-section="motif"><i data-lucide="sparkles"></i></div>
             <div class="menu-item" data-section="guide"><i data-lucide="info"></i></div>
             <div style="flex: 1"></div>
             <div class="menu-item"><i data-lucide="settings"></i></div>
@@ -24,6 +26,7 @@
         <!-- 섹션들이 동적으로 로드됩니다 -->
         <section class="content-section active" id="section-dashboard"></section>
         <section class="content-section" id="section-playlist"></section>
+        <section class="content-section" id="section-motif"></section>
         <section class="content-section" id="section-guide"></section>
     </div>
 
