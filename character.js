@@ -9,8 +9,8 @@ export const characterProfiles = {
                 main: "「 定 」",
                 bottom: "모든 <span class=\"highlight\">미래는</span> 불변한다."
             },
-            name: "모리슨 벨 라이어 (11살)",
-            nameEn: "Morrison Bell Liar - Age 11",
+            name: "모리슨 벨 라이어",
+            nameEn: "Morrison Bell Liar",
             quote: "데자뷔....",
             tags: ["#무신경", "#무반응", "#무감각"]
         },
@@ -102,8 +102,8 @@ export const characterProfiles = {
                 main: "「 反 」",
                 bottom: "인간은 <span class=\"highlight\">운명조차</span> 변화시킬수 있다."
             },
-            name: "모리슨 벨 라이어 (17살)",
-            nameEn: "Morrison Bell Liar - Age 17",
+            name: "모리슨 벨 라이어",
+            nameEn: "Morrison Bell Liar",
             quote: "친애하는 나의....",
             tags: ["#낭만적인", "#다정한", "#상냥한"]
         },
@@ -195,8 +195,8 @@ export const characterProfiles = {
                 main: "「 合 」",
                 bottom: "전도자가 이르되 헛되고 헛되며 헛되고 헛되니 <span class=\"highlight\">모든 것이</span> 헛되도다."
             },
-            name: "아난케 에이와스 리드맨 (29살)",
-            nameEn: "Ananke Aiwass Leadman - Age 29",
+            name: "아난케 에이와스 리드맨",
+            nameEn: "Ananke Aiwass Leadman",
             quote: "나중에 못 볼지도 모르니까 미리 인사하자. 좋은 아침, 좋은 저녁, 그리고 좋은 점심.",
             tags: ["#허무", "#무기력", "#상실"]
         },
