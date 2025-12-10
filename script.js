@@ -344,6 +344,7 @@ function renderCharacterProfile(age = currentAge) {
 
     // 프로필 헤더
     document.getElementById('char-main-img').src = char.profile.image;
+    document.getElementById('char-catchphrase').textContent = char.profile.catchphrase;
     document.getElementById('char-name').textContent = char.profile.name;
     document.getElementById('char-name-en').textContent = char.profile.nameEn;
     document.getElementById('char-quote').textContent = `"${char.profile.quote}"`;
@@ -351,11 +352,23 @@ function renderCharacterProfile(age = currentAge) {
         `<span class="profile-tag">${tag}</span>`
     ).join('');
 
-    // 기본 정보
-    document.getElementById('basic-info-grid').innerHTML = char.basicInfo.map(info =>
+    // 기본 정보 (우측에는 최소한의 정보만 표시)
+    const essentialLabels = ['나이', '기숙사', '진영', '국적'];
+    const essentialInfo = char.basicInfo.filter(info => essentialLabels.includes(info.label));
+    const detailedInfo = char.basicInfo.filter(info => !essentialLabels.includes(info.label));
+
+    document.getElementById('basic-info-grid').innerHTML = essentialInfo.map(info =>
         `<div class="info-item">
             <span class="info-label">${info.label}</span>
             <span class="info-value">${info.value}</span>
+        </div>`
+    ).join('');
+
+    // 상세 정보 (아래 테이블에 표시)
+    document.getElementById('detailed-info-table').innerHTML = detailedInfo.map(info =>
+        `<div class="detailed-info-row">
+            <div class="detailed-info-label">${info.label}</div>
+            <div class="detailed-info-value">${info.value}</div>
         </div>`
     ).join('');
 
