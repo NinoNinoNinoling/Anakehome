@@ -1,11 +1,11 @@
-import { playlistData } from './data.js';
-import { characterData, characterProfiles } from './character.js';
-import { characterData as charDetailData } from './data/character.js';
-import { ownerData } from './owner.js';
-import { motifData } from './motif.js';
+import { playlistData } from './data/playlist.js';
+import { characterData, characterProfiles } from './data/character.js';
+import { ownerData } from './data/owner.js';
+import { motifData } from './data/motif.js';
+import { config } from './data/config.js';
 
 // 현재 선택된 나이
-let currentAge = 11;
+let currentAge = config.defaults.age;
 
 // 컴포넌트 로더
 async function loadComponent(sectionId, componentPath) {
@@ -21,10 +21,10 @@ async function loadComponent(sectionId, componentPath) {
 // 초기 컴포넌트 로드
 async function loadAllComponents() {
     await Promise.all([
-        loadComponent('section-dashboard', 'components/dashboard.html'),
-        loadComponent('section-playlist', 'components/playlist.html'),
-        loadComponent('section-motif', 'components/motif.html'),
-        loadComponent('section-guide', 'components/about.html')
+        loadComponent('section-dashboard', config.components.dashboard),
+        loadComponent('section-playlist', config.components.playlist),
+        loadComponent('section-motif', config.components.motif),
+        loadComponent('section-guide', config.components.guide)
     ]);
 
     // 컴포넌트 로드 후 아이콘 초기화
@@ -47,7 +47,7 @@ let currentBgPlayer = null;
 let bgPlayersReady = {};
 
 const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
+tag.src = config.api.youtubeIframe;
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -57,15 +57,15 @@ window.onYouTubeIframeAPIReady = function() {
             let videoId = extractYouTubeId(item.link);
             item.youtubeId = videoId;
             item.cover = videoId
-                ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-                : `https://ui-avatars.com/api/?name=${encodeURIComponent(item.title)}&background=333&color=fff`;
+                ? config.api.youtubeThumbnail(videoId)
+                : config.api.uiAvatars(item.title);
         });
 
         player = new YT.Player('youtube-player-container', {
-            height: '203',
-            width: '360',
+            height: String(config.player.height),
+            width: String(config.player.width),
             videoId: playlistData[0].youtubeId,
-            playerVars: { 'playsinline': 1, 'controls': 0, 'disablekb': 1, 'fs': 0, 'rel': 0, 'autoplay': 0 },
+            playerVars: config.player.playerVars,
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -79,8 +79,8 @@ window.onYouTubeIframeAPIReady = function() {
     setTimeout(() => {
         initBackgroundPlayers();
         // 대시보드가 기본 활성화되어 있으므로 배경 음악 재생
-        playBackgroundMusic('dashboard');
-    }, 1000);
+        playBackgroundMusic(config.defaults.section);
+    }, config.timing.bgMusicInitDelay);
 }
 
 function onPlayerReady(event) { playerReady = true; }
@@ -181,7 +181,7 @@ function playSpecificSong(index) {
     loadSongUI(index);
     if(player && playerReady && playlistData[index].youtubeId) {
         player.loadVideoById(playlistData[index].youtubeId);
-        setTimeout(() => player.playVideo(), 100);
+        setTimeout(() => player.playVideo(), config.timing.videoLoadDelay);
 
         // 최근 재생 목록에 추가
         addToRecentPlays(playlistData[index]);
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 컴포넌트 로드
     await loadAllComponents();
 
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 100);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
 
     // 캐릭터 프로필 렌더링
     renderCharacterProfile();
@@ -313,15 +313,15 @@ function switchSection(sectionName) {
         targetMenuItem.classList.add('active');
     }
 
-    // 배경 음악 재생 (playlist와 motif 섹션은 배경 음악 없음)
-    if (sectionName === 'dashboard' || sectionName === 'guide') {
+    // 배경 음악 재생 (config에 정의된 섹션에서만 재생)
+    if (config.bgMusicSections.includes(sectionName)) {
         playBackgroundMusic(sectionName);
     } else {
         stopAllBackgroundMusic();
     }
 
     // 아이콘 재렌더링
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
 }
 
 function setupAgeTabListeners() {
@@ -351,8 +351,8 @@ function setupAgeTabListeners() {
 }
 
 function renderCharacterProfile(age = currentAge) {
-    const profile = charDetailData.profiles[age];
-    const common = charDetailData.common;
+    const profile = characterData.profiles[age];
+    const common = characterData.common;
 
     if (!profile) return;
 
@@ -542,7 +542,7 @@ function renderCharacterProfile(age = currentAge) {
     }
 
     // 아이콘 재렌더링
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
 }
 
 function renderOwnerProfile() {
@@ -647,7 +647,7 @@ function renderOwnerProfile() {
     }
 
     // 아이콘 재렌더링
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
 }
 
 // 백그라운드 음악 플레이어 초기화
@@ -668,7 +668,7 @@ function initBackgroundPlayers() {
             events: {
                 onReady: (event) => {
                     bgPlayersReady['dashboard'] = true;
-                    event.target.setVolume(20); // 음량 20%
+                    event.target.setVolume(config.player.defaultVolume);
                 }
             }
         });
@@ -689,7 +689,7 @@ function initBackgroundPlayers() {
             events: {
                 onReady: (event) => {
                     bgPlayersReady['guide'] = true;
-                    event.target.setVolume(20); // 음량 20%
+                    event.target.setVolume(config.player.defaultVolume);
                 }
             }
         });
@@ -737,7 +737,7 @@ function updateDashboardBgMusic(age) {
         if (currentBgPlayer === 'dashboard') {
             setTimeout(() => {
                 bgPlayers['dashboard'].playVideo();
-            }, 500);
+            }, config.timing.bgMusicSwitchDelay);
         }
     }
 }
@@ -759,5 +759,5 @@ function renderMotifPage() {
     ).join('');
 
     // 아이콘 재렌더링
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 50);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
 }
