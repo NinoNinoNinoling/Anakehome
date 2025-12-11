@@ -162,10 +162,12 @@
 }
 
 .proposition-description.scripture-text {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #aaa;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: #9a9a9a;
 }
 
 .header-divider {
