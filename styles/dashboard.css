@@ -126,6 +126,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding-top: 60px;
+    min-width: 280px;
 }
 
 .proposition {
@@ -205,6 +206,7 @@
     color: var(--char-text-muted);
     line-height: 1.8;
     margin: 0;
+    text-align: justify;
 }
 
 .quote-description p em,
