@@ -3,7 +3,8 @@ export const characterProfiles = {
     11: {
         // 프로필 헤더
         profile: {
-            image: "https://drive.google.com/uc?export=view&id=1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
+            // [수정] 구글 드라이브 이미지 로딩을 위한 주소 변경
+            image: "https://lh3.googleusercontent.com/d/1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
             imageCredit: "@지인",
             themeColor: "#FFD800",
             catchphrase: {
@@ -94,7 +95,8 @@ export const characterProfiles = {
     17: {
         // 프로필 헤더
         profile: {
-            image: "https://drive.google.com/uc?export=view&id=1nowOrjgIuAobCsT-AF56G0-OuqBhtg0b",
+            // [수정] 구글 드라이브 이미지 로딩을 위한 주소 변경
+            image: "https://lh3.googleusercontent.com/d/1nowOrjgIuAobCsT-AF56G0-OuqBhtg0b",
             imageCredit: "https://www.neka.cc/composer/14237",
             themeColor: "#FBEFEF",
             catchphrase: {
@@ -189,7 +191,8 @@ export const characterProfiles = {
     29: {
         // 프로필 헤더
         profile: {
-            image: "https://drive.google.com/uc?export=view&id=1wgx1oQV3rsfzln_f3SkASSALibOghXid",
+            // [수정] 구글 드라이브 이미지 로딩을 위한 주소 변경
+            image: "https://lh3.googleusercontent.com/d/1wgx1oQV3rsfzln_f3SkASSALibOghXid",
             imageCredit: "https://www.neka.cc/composer/14237",
             themeColor: "#B2B0E8",
             catchphrase: {
