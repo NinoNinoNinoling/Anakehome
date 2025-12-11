@@ -20,7 +20,8 @@ export const characterData = {
     "11": {
       themeColor: "#FFD800",
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
-      imageCredit: { text: "", url: "" },
+      image: "https://drive.google.com/uc?export=view&id=1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
+      imageCredit: "@지인",
       affiliation: { type: "house", name: "HUFFLEPUFF" },
       
       proposition: {
@@ -69,7 +70,8 @@ export const characterData = {
       themeColor: "#FBEFEF",
       themeColorAccent: "#c9a090",
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
-      imageCredit: { text: "", url: "" },
+      image: "https://drive.google.com/uc?export=view&id=1nowOrjgIuAobCsT-AF56G0-OuqBhtg0b",
+      imageCredit: "https://www.neka.cc/composer/14237",
       affiliation: { type: "house", name: "HUFFLEPUFF" },
       
       proposition: {
@@ -122,7 +124,8 @@ export const characterData = {
     "29": {
       themeColor: "#B2B0E8",
       name: { kr: "아난케 에이와스 리드맨", en: "ANANKE AIWASS LEADMAN" },
-      imageCredit: { text: "", url: "" },
+      image: "https://drive.google.com/uc?export=view&id=1wgx1oQV3rsfzln_f3SkASSALibOghXid",
+      imageCredit: "https://www.neka.cc/composer/14237",
       affiliation: { type: "order", name: "ORDER OF THE PHOENIX" },
       
       proposition: {
