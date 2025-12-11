@@ -3,7 +3,7 @@ export const characterProfiles = {
     11: {
         // 프로필 헤더
         profile: {
-            image: "https://ui-avatars.com/api/?name=Morrison+Bell+Liar&background=FFD800&color=000&size=400",
+            image: "https://drive.google.com/uc?export=view&id=1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
             themeColor: "#FFD800",
             catchphrase: {
                 top: "제 1 명제",
@@ -93,7 +93,7 @@ export const characterProfiles = {
     17: {
         // 프로필 헤더
         profile: {
-            image: "https://ui-avatars.com/api/?name=Morrison+Bell+Liar&background=FBEFEF&color=000&size=400",
+            image: "https://drive.google.com/uc?export=view&id=1nowOrjgIuAobCsT-AF56G0-OuqBhtg0b",
             themeColor: "#FBEFEF",
             catchphrase: {
                 top: "제 2 반론",
@@ -187,7 +187,7 @@ export const characterProfiles = {
     29: {
         // 프로필 헤더
         profile: {
-            image: "https://ui-avatars.com/api/?name=Ananke+Aiwass+Leadman&background=B2B0E8&color=fff&size=400",
+            image: "https://drive.google.com/uc?export=view&id=1wgx1oQV3rsfzln_f3SkASSALibOghXid",
             themeColor: "#B2B0E8",
             catchphrase: {
                 top: "제 3 진리",
