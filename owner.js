@@ -1,6 +1,6 @@
 export const ownerData = {
-    // 프로필 이미지
-    profileImage: "https://ui-avatars.com/api/?name=Choyeop&background=8b5cf6&color=fff&size=400",
+    // 프로필 이미지 (트위터 @NINANINANINANO_ 프로필 사진)
+    profileImage: "https://unavatar.io/twitter/NINANINANINANO_",
 
     // 마스코트/치비 이미지
     mascotImage: "https://ui-avatars.com/api/?name=M&background=3b82f6&color=fff&size=150",
@@ -80,7 +80,7 @@ export const ownerData = {
         {
             icon: "twitter",
             text: "Twitter",
-            url: "https://twitter.com/your_account"
+            url: "https://twitter.com/NINANINANINANO_"
         }
     ],
 
