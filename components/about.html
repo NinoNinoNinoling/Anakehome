@@ -1,69 +1,78 @@
 <div class="owner-profile-container">
-    <!-- 프로필 카드 -->
+    <!-- 메인 프로필 카드 -->
     <div class="owner-card">
-        <!-- 마스코트 이미지 (우측 상단) -->
-        <div class="owner-mascot">
-            <img src="" alt="Mascot" id="owner-mascot-img">
+        <!-- 프로필 헤더 -->
+        <div class="owner-profile-header">
+            <div class="owner-profile-image">
+                <img src="" alt="Profile" id="owner-profile-img">
+            </div>
+            <div class="owner-header-info">
+                <h1 id="owner-name-display">초엽</h1>
+                <p class="owner-subtitle" id="owner-quote">플레이 가능 시간대 등 보조문구를 입력해주세요</p>
+            </div>
         </div>
 
-        <!-- 메인 프로필 이미지 -->
-        <div class="owner-profile-image">
-            <img src="" alt="Profile" id="owner-profile-img">
-            <div class="owner-watermark">@사서님</div>
+        <!-- 태그 섹션 -->
+        <div class="owner-tags-section">
+            <div class="owner-tags" id="owner-tags">
+                <span class="owner-tag">#역극선호</span>
+                <span class="owner-tag">#썰풀이</span>
+            </div>
         </div>
 
-        <!-- 인용구 -->
-        <div class="owner-quote-bubble">
-            <p id="owner-quote">"상상을 현실로 만드는 크리에이터"</p>
-        </div>
-
-        <!-- 이름 -->
-        <div class="owner-name-section">
-            <h1 id="owner-name-display">ANANKE</h1>
-        </div>
-
-        <!-- 태그 -->
-        <div class="owner-tags" id="owner-tags">
-            <button class="owner-tag">#캐릭터 디자인</button>
-            <button class="owner-tag">#일러스트</button>
-            <button class="owner-tag">#음악 감상</button>
-        </div>
-
-        <!-- Owner 섹션 -->
-        <div class="owner-about-section">
-            <h2>OWNER</h2>
-            <div class="owner-description" id="owner-description">
+        <!-- OWNER 소개 -->
+        <div class="owner-section">
+            <h3><i data-lucide="user"></i> OWNER</h3>
+            <div class="owner-section-content" id="owner-description">
                 <p>안녕하세요! 창작 캐릭터와 음악을 사랑하는 크리에이터입니다.</p>
             </div>
         </div>
 
-        <!-- 관심사 그리드 -->
-        <div class="owner-interests-section">
-            <div class="interests-grid" id="owner-interests-grid"></div>
+        <!-- 오너 정보 -->
+        <div class="owner-section">
+            <h3><i data-lucide="info"></i> 오너 정보</h3>
+            <div class="owner-section-content owner-info-list" id="owner-interests-grid">
+            </div>
         </div>
 
         <!-- 교류 정보 -->
         <div class="owner-section">
             <h3><i data-lucide="message-circle"></i> 교류 정보</h3>
-            <div class="owner-info-grid" id="owner-communication"></div>
+            <div class="owner-section-content owner-info-list" id="owner-communication">
+            </div>
+        </div>
+
+        <!-- 챙김 & 언급 -->
+        <div class="owner-section">
+            <h3><i data-lucide="star"></i> 챙김 & 언급</h3>
+            <div class="owner-section-content owner-info-list" id="owner-mention">
+            </div>
         </div>
 
         <!-- 연락 & 조율 -->
         <div class="owner-section">
             <h3><i data-lucide="phone"></i> 연락 & 조율</h3>
-            <div class="owner-info-grid" id="owner-contact"></div>
+            <div class="owner-section-content owner-info-list" id="owner-contact">
+            </div>
         </div>
 
         <!-- 연성 정보 -->
         <div class="owner-section">
             <h3><i data-lucide="palette"></i> 연성 정보</h3>
-            <div class="owner-info-grid" id="owner-fanwork"></div>
+            <div class="owner-section-content owner-info-list" id="owner-fanwork">
+            </div>
         </div>
 
         <!-- 링크 -->
-        <div class="owner-links-section">
+        <div class="owner-section">
             <h3><i data-lucide="link"></i> Links</h3>
-            <div class="owner-links" id="owner-links"></div>
+            <div class="owner-links" id="owner-links">
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="owner-footer">
+            <span>이술 @sop_trpg</span>
         </div>
     </div>
 
