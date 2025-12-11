@@ -560,15 +560,15 @@ function renderOwnerProfile() {
     const nameDisplay = document.getElementById('owner-name-display');
     if (nameDisplay) nameDisplay.textContent = owner.nameStyle;
 
-    // 인용구
+    // 인용구 (보조문구)
     const quote = document.getElementById('owner-quote');
-    if (quote) quote.textContent = `"${owner.quote}"`;
+    if (quote) quote.textContent = owner.quote;
 
     // 태그
     const tagsContainer = document.getElementById('owner-tags');
     if (tagsContainer) {
         tagsContainer.innerHTML = owner.tags.map(tag =>
-            `<button class="owner-tag">${tag}</button>`
+            `<span class="owner-tag">${tag}</span>`
         ).join('');
     }
 
@@ -580,13 +580,13 @@ function renderOwnerProfile() {
         ).join('');
     }
 
-    // 관심사
-    const interestsGrid = document.getElementById('owner-interests-grid');
-    if (interestsGrid) {
-        interestsGrid.innerHTML = owner.interests.map(interest =>
-            `<div class="interest-item">
-                <span class="interest-label">${interest.label}</span>
-                <span class="interest-value">${interest.value}</span>
+    // 오너 정보
+    const ownerInfoGrid = document.getElementById('owner-interests-grid');
+    if (ownerInfoGrid && owner.ownerInfo) {
+        ownerInfoGrid.innerHTML = owner.ownerInfo.map(item =>
+            `<div class="owner-info-item">
+                <span class="owner-info-label">${item.label}</span>
+                <span class="owner-info-value">${item.value}</span>
             </div>`
         ).join('');
     }
@@ -595,6 +595,17 @@ function renderOwnerProfile() {
     const communicationGrid = document.getElementById('owner-communication');
     if (communicationGrid && owner.communication) {
         communicationGrid.innerHTML = owner.communication.map(item =>
+            `<div class="owner-info-item">
+                <span class="owner-info-label">${item.label}</span>
+                <span class="owner-info-value">${item.value}</span>
+            </div>`
+        ).join('');
+    }
+
+    // 챙김 & 언급
+    const mentionGrid = document.getElementById('owner-mention');
+    if (mentionGrid && owner.mention) {
+        mentionGrid.innerHTML = owner.mention.map(item =>
             `<div class="owner-info-item">
                 <span class="owner-info-label">${item.label}</span>
                 <span class="owner-info-value">${item.value}</span>
