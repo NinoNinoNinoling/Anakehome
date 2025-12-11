@@ -115,8 +115,7 @@ function extractYouTubeId(url) {
 
 function renderPlaylist() {
     const container = document.getElementById('playlist-container');
-    if (!container) return;
-
+    if (!container) return; // 컴포넌트가 아직 로드되지 않은 경우 무시
     container.innerHTML = '';
     playlistData.forEach((song, index) => {
         const div = document.createElement('div');
@@ -136,10 +135,12 @@ function renderPlaylist() {
 function loadSongUI(index) {
     if(!playlistData[index]) return;
     const song = playlistData[index];
-    
+
+    // 컴포넌트가 아직 로드되지 않은 경우 무시
     const albumArt = document.getElementById('main-album-art');
     if (!albumArt) return;
 
+    // 기본 정보
     albumArt.src = song.cover;
     const titleEl = document.getElementById('main-title');
     if(titleEl) {
@@ -265,8 +266,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadAllComponents();
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 100);
 
-    renderPlaylist();
-    loadSongUI(currentSongIndex);
+    // 플레이리스트 UI 초기화 (컴포넌트 로드 후)
+    if (playlistData.length > 0) {
+        renderPlaylist();
+        loadSongUI(0);
+    }
+
+    // 캐릭터 프로필 렌더링
     renderCharacterProfile();
     renderOwnerProfile();
     renderMotifPage();
