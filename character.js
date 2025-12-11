@@ -192,7 +192,8 @@ export const characterProfiles = {
             catchphrase: {
                 top: "제 3 진리",
                 main: "「 合 」",
-                bottom: "전도자가 이르되 헛되고 헛되며 헛되고 헛되니 <span class=\"highlight\">모든 것이</span> 헛되도다."
+                bottom: "Vanity of vanities, saith the Preacher, vanity of vanities; <span class=\"highlight\">all is vanity.</span>",
+                isScripture: true
             },
             name: "아난케 에이와스 리드맨",
             nameEn: "Ananke Aiwass Leadman",

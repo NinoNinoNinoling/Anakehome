@@ -369,7 +369,14 @@ function renderCharacterProfile(age = currentAge) {
 
     if (propNumber) propNumber.textContent = profile.proposition.number;
     if (propKanji) propKanji.textContent = `「 ${profile.proposition.kanji} 」`;
-    if (propDesc) propDesc.innerHTML = profile.proposition.description;
+    if (propDesc) {
+        propDesc.innerHTML = profile.proposition.description;
+        if (profile.proposition.isScripture) {
+            propDesc.classList.add('scripture-text');
+        } else {
+            propDesc.classList.remove('scripture-text');
+        }
+    }
 
     // 한마디 섹션
     const quoteMain = document.getElementById('quote-main');

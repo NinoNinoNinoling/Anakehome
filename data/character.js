@@ -123,12 +123,13 @@ export const characterData = {
       themeColor: "#B2B0E8",
       name: { kr: "아난케 에이와스 리드맨", en: "ANANKE AIWASS LEADMAN" },
       imageCredit: { text: "", url: "" },
-      affiliation: { type: "order", name: "PHOENIX ORDER" },
+      affiliation: { type: "order", name: "ORDER OF THE PHOENIX" },
       
       proposition: {
         number: "제 3 진리",
         kanji: "合",
-        description: "전도자가 이르되 헛되고 헛되며 헛되고 헛되니 <em>모든 것이</em> 헛되도다."
+        description: "Vanity of vanities, saith the Preacher, vanity of vanities; <em>all is vanity.</em>",
+        isScripture: true
       },
       
       quote: {
