@@ -20,6 +20,7 @@ export const characterData = {
     "11": {
       themeColor: "#FFD800",
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
+      imageCredit: { text: "", url: "" },
       affiliation: { type: "house", name: "HUFFLEPUFF" },
       
       proposition: {
@@ -68,6 +69,7 @@ export const characterData = {
       themeColor: "#FBEFEF",
       themeColorAccent: "#c9a090",
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
+      imageCredit: { text: "", url: "" },
       affiliation: { type: "house", name: "HUFFLEPUFF" },
       
       proposition: {
@@ -120,6 +122,7 @@ export const characterData = {
     "29": {
       themeColor: "#B2B0E8",
       name: { kr: "아난케 에이와스 리드맨", en: "ANANKE AIWASS LEADMAN" },
+      imageCredit: { text: "", url: "" },
       affiliation: { type: "order", name: "PHOENIX ORDER" },
       
       proposition: {

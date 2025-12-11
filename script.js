@@ -396,6 +396,21 @@ function renderCharacterProfile(age = currentAge) {
         if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
     }
 
+    // 이미지 출처
+    const avatarCredit = document.getElementById('avatar-credit');
+    if (avatarCredit) {
+        if (profile.imageCredit && profile.imageCredit.text) {
+            if (profile.imageCredit.url) {
+                avatarCredit.innerHTML = `illust by <a href="${profile.imageCredit.url}" target="_blank" rel="noopener noreferrer">${profile.imageCredit.text}</a>`;
+            } else {
+                avatarCredit.textContent = `illust by ${profile.imageCredit.text}`;
+            }
+            avatarCredit.style.display = 'block';
+        } else {
+            avatarCredit.style.display = 'none';
+        }
+    }
+
     // 이름 섹션
     const nameKr = document.getElementById('char-name-kr');
     const nameEn = document.getElementById('char-name-en');

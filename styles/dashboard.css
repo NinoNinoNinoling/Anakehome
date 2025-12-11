@@ -126,6 +126,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding-top: 60px;
+    min-width: 280px;
 }
 
 .proposition {
@@ -205,6 +206,7 @@
     color: var(--char-text-muted);
     line-height: 1.8;
     margin: 0;
+    text-align: justify;
 }
 
 .quote-description p em,
@@ -282,6 +284,24 @@
 
 .avatar-image img[src]:not([src=""]) ~ .avatar-placeholder {
     display: none;
+}
+
+/* 이미지 출처 */
+.avatar-credit {
+    margin-top: 15px;
+    font-size: 10px;
+    color: var(--char-text-muted);
+    text-align: center;
+}
+
+.avatar-credit a {
+    color: var(--char-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.avatar-credit a:hover {
+    color: var(--char-theme);
 }
 
 /* 우측 열: 이름 + 성격 */
