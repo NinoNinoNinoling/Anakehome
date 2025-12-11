@@ -4,7 +4,7 @@ export const characterProfiles = {
         // 프로필 헤더
         profile: {
             // [수정] 구글 드라이브 이미지 로딩을 위한 주소 변경
-            image: "https://lh3.googleusercontent.com/d/1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
+            image: "다운로드 (1).png",
             imageCredit: "@지인",
             themeColor: "#FFD800",
             catchphrase: {
