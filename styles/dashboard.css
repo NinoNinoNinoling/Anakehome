@@ -63,7 +63,7 @@
 .character-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 180px;
+    padding: 0 60px;
     position: relative;
     z-index: 1;
 }
@@ -225,7 +225,8 @@
 /* 중앙 열: 캐릭터 이미지 */
 .header-center {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     padding-top: 40px;
 }
@@ -574,7 +575,7 @@
    ======================================== */
 @media (max-width: 1200px) {
     .character-container {
-        padding: 0 80px;
+        padding: 0 60px;
     }
 
     .character-header {
@@ -588,7 +589,7 @@
 
 @media (max-width: 1024px) {
     .character-container {
-        padding: 0 40px;
+        padding: 0 60px;
     }
 
     .character-header {
