@@ -80,7 +80,7 @@ export const ownerData = {
         {
             icon: "twitter",
             text: "Twitter",
-            url: "https://twitter.com/NINANINANINANO_"
+            url: "https://x.com/NINANINANINANO_"
         }
     ],
 
