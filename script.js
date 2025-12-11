@@ -399,18 +399,27 @@ function renderCharacterProfile(age = currentAge) {
     const avatarPlaceholder = document.getElementById('avatar-placeholder');
     if (charAvatar) {
         // 이미지 URL이 있으면 표시, 없으면 플레이스홀더
-        charAvatar.src = '';
-        if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        if (profile.image) {
+            charAvatar.src = profile.image;
+            charAvatar.style.display = 'block';
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+        } else {
+            charAvatar.src = '';
+            charAvatar.style.display = 'none';
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        }
     }
 
     // 이미지 출처
     const avatarCredit = document.getElementById('avatar-credit');
     if (avatarCredit) {
-        if (profile.imageCredit && profile.imageCredit.text) {
-            if (profile.imageCredit.url) {
-                avatarCredit.innerHTML = `illust by <a href="${profile.imageCredit.url}" target="_blank" rel="noopener noreferrer">${profile.imageCredit.text}</a>`;
+        if (profile.imageCredit) {
+            const credit = profile.imageCredit;
+            // URL인지 확인 (http로 시작하면 링크로 처리)
+            if (credit.startsWith('http')) {
+                avatarCredit.innerHTML = `illust by <a href="${credit}" target="_blank" rel="noopener noreferrer">Link</a>`;
             } else {
-                avatarCredit.textContent = `illust by ${profile.imageCredit.text}`;
+                avatarCredit.textContent = `illust by ${credit}`;
             }
             avatarCredit.style.display = 'block';
         } else {
