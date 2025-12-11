@@ -1,13 +1,18 @@
-/* 플레이리스트 섹션 레이아웃 */
+/* ========================================
+   플레이리스트 섹션 레이아웃
+   ======================================== */
 #section-playlist.active {
     display: grid;
     grid-template-columns: 280px minmax(320px, 1fr) 300px;
+    background-color: var(--bg-color);
 }
 
-/* 왼쪽 곡 리스트 */
+/* ========================================
+   왼쪽 곡 리스트
+   ======================================== */
 .zone-list {
-    background-color: #121212;
-    border-right: 1px solid #2a2a2a;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -15,43 +20,46 @@
 
 .list-header {
     padding: 1.5rem;
-    border-bottom: 1px solid #2a2a2a;
-    font-weight: bold;
-    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--highlight-color);
 }
 
 .song-list-container {
     flex: 1;
     overflow-y: auto;
-    padding: 0.5rem;
+    padding: 8px;
 }
 
 .song-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background 0.2s;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .song-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .song-item.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .song-item img {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 4px;
     object-fit: cover;
     flex-shrink: 0;
-    background-color: #333;
+    background-color: var(--bg-tertiary);
 }
 
 .song-info {
@@ -61,30 +69,33 @@
 
 .song-info h4 {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 500;
 }
 
 .song-info p {
-    margin: 2px 0 0;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
+    margin: 3px 0 0;
+    font-size: 11px;
+    color: var(--text-muted);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* 중앙 플레이어 */
+/* ========================================
+   중앙 플레이어
+   ======================================== */
 .zone-player {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #0f0f0f;
+    background-color: var(--bg-color);
     padding: 2rem;
     min-width: 320px;
     overflow: hidden;
@@ -101,20 +112,21 @@
     background-image: var(--player-bg-image);
     background-size: cover;
     background-position: center;
-    filter: blur(50px) brightness(0.25);
-    transform: scale(1.2);
+    filter: blur(80px) brightness(0.15) saturate(0.5);
+    transform: scale(1.5);
     z-index: -1;
     transition: background-image 0.5s ease-in-out;
 }
 
 .album-art-large {
-    width: 300px;
-    height: 300px;
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    width: 280px;
+    height: 280px;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
     object-fit: cover;
-    background-color: #222;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-light);
 }
 
 .player-info {
@@ -125,23 +137,23 @@
 }
 
 .player-info h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 6px;
     cursor: pointer;
     transition: opacity 0.2s;
     word-break: keep-all;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .player-info h1:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 .player-info p {
-    font-size: 1rem;
-    color: #ccc;
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 /* 해시태그 & 코멘트 */
@@ -149,40 +161,42 @@
     display: flex;
     gap: 6px;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 12px;
     flex-wrap: wrap;
 }
 
 .hashtag {
-    background-color: rgba(59, 130, 246, 0.2);
-    color: #93c5fd;
+    background-color: rgba(var(--highlight-rgb), 0.12);
+    color: var(--highlight-color);
     padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    border-radius: 2px;
+    font-size: 11px;
     font-weight: 500;
     transition: all 0.2s;
 }
 
 .hashtag:hover {
-    background-color: rgba(59, 130, 246, 0.4);
-    transform: translateY(-2px);
+    background-color: rgba(var(--highlight-rgb), 0.2);
 }
 
 .player-comment {
     margin-top: 1.5rem;
-    font-size: 0.95rem;
-    color: #e5e7eb;
+    font-size: 12px;
+    color: var(--text-secondary);
     font-style: italic;
-    line-height: 1.6;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 12px 20px;
-    border-radius: 12px;
+    line-height: 1.7;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 4px;
     max-width: 90%;
     word-break: keep-all;
     display: none;
 }
 
-/* 재생 컨트롤 */
+/* ========================================
+   재생 컨트롤
+   ======================================== */
 .controls {
     display: flex;
     align-items: center;
@@ -193,14 +207,14 @@
 .btn-control {
     background: none;
     border: none;
-    color: #aaa;
+    color: var(--text-muted);
     cursor: pointer;
     transition: all 0.2s;
+    padding: 8px;
 }
 
 .btn-control:hover {
-    color: white;
-    transform: scale(1.1);
+    color: var(--text-color);
 }
 
 .btn-control:active {
@@ -209,43 +223,44 @@
 
 .btn-control.active {
     color: var(--highlight-color);
-    transform: scale(1.1);
 }
 
 .btn-play {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background-color: white;
-    color: black;
+    background-color: var(--text-color);
+    color: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-play:hover {
-    color: black;
+    color: var(--bg-color);
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* 프로그레스 바 */
+/* ========================================
+   프로그레스 바
+   ======================================== */
 .progress-container {
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #888;
-    font-size: 0.8rem;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 11px;
 }
 
 .progress-bar-bg {
     flex: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.1);
+    height: 3px;
+    background: var(--border-light);
     border-radius: 2px;
     cursor: pointer;
     position: relative;
@@ -254,36 +269,42 @@
 .progress-bar-fill {
     width: 0%;
     height: 100%;
-    background: white;
+    background: var(--text-color);
     border-radius: 2px;
     position: relative;
+    transition: width 0.1s linear;
 }
 
-/* 오른쪽 가사 */
+/* ========================================
+   오른쪽 가사
+   ======================================== */
 .zone-lyrics {
-    background-color: #121212;
-    border-left: 1px solid #2a2a2a;
-    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 1.5rem;
     overflow-y: auto;
     text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #aaa;
+    font-size: 12px;
+    line-height: 2;
+    color: var(--text-muted);
     white-space: pre-wrap;
     word-break: break-word;
 }
 
 .lyrics-title {
-    font-size: 0.8rem;
-    color: #555;
-    margin-bottom: 2rem;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--highlight-color);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 2rem;
     width: 100%;
     text-align: center;
 }
 
-/* YouTube 플레이어 숨김 */
+/* ========================================
+   YouTube 플레이어 숨김
+   ======================================== */
 #youtube-player-container {
     position: absolute;
     top: -9999px;
@@ -294,13 +315,30 @@
     pointer-events: none;
 }
 
-/* 반응형 - 플레이리스트 */
+/* ========================================
+   반응형
+   ======================================== */
 @media (max-width: 1200px) {
-    #section-playlist {
+    #section-playlist.active {
         grid-template-columns: 280px 1fr;
     }
 
     .zone-lyrics {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #section-playlist.active {
+        grid-template-columns: 1fr;
+    }
+
+    .zone-list {
+        display: none;
+    }
+
+    .album-art-large {
+        width: 240px;
+        height: 240px;
     }
 }

@@ -1,25 +1,66 @@
-/* 기본 변수 및 전역 스타일 */
+/* ========================================
+   기본 변수 및 전역 스타일
+   ======================================== */
 :root {
-    --bg-color: #0f0f0f;
-    --surface-color: #1a1a1a;
-    --text-secondary: #888888;
-    --highlight-color: #3b82f6;
+    /* 배경 색상 */
+    --bg-color: #0a0a0c;
+    --bg-secondary: #111114;
+    --bg-tertiary: #1a1a1e;
+
+    /* 테두리 */
+    --border-color: rgba(255, 255, 255, 0.04);
+    --border-light: rgba(255, 255, 255, 0.08);
+
+    /* 텍스트 색상 */
+    --text-color: #e8e6e3;
+    --text-secondary: #666;
+    --text-muted: #555;
+    --text-dim: #444;
+
+    /* 강조색 (기본) */
+    --highlight-color: #B2B0E8;
+    --highlight-rgb: 178, 176, 232;
+
+    /* 표면 색상 */
+    --surface-color: #111114;
+    --card-color: #111114;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: "Pretendard Variable", sans-serif;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     background-color: var(--bg-color);
-    color: white;
+    color: var(--text-color);
     overflow: hidden;
     height: 100vh;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 4px;
+}
 
-/* 앱 레이아웃 */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   앱 레이아웃
+   ======================================== */
 .app-layout {
     display: flex;
     height: 100vh;
@@ -27,10 +68,12 @@ body {
     overflow: hidden;
 }
 
-/* 왼쪽 메뉴 */
+/* ========================================
+   왼쪽 메뉴
+   ======================================== */
 .zone-menu {
     background-color: var(--surface-color);
-    border-right: 1px solid #333;
+    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,23 +84,53 @@ body {
 }
 
 .menu-item {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.2s;
+    padding: 8px;
+    border-radius: 8px;
 }
 
-.menu-item:hover,
+.menu-item:hover {
+    color: var(--text-secondary);
+}
+
 .menu-item.active {
-    color: white;
+    color: var(--text-color);
 }
 
-/* 섹션 전환 */
+/* ========================================
+   섹션 전환
+   ======================================== */
 .content-section {
     display: none;
     flex: 1;
     overflow: hidden;
+    background-color: var(--bg-color);
 }
 
 .content-section.active {
     display: flex;
+}
+
+/* ========================================
+   공통 유틸리티
+   ======================================== */
+.section-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--highlight-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
 }
