@@ -25,8 +25,8 @@ export const characterData = {
 
       // 기본 정보
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
-      image: "", // 프로필 이미지 URL
-      imageCredit: { text: "", url: "" },
+      image: "https://lh3.googleusercontent.com/d/1ocIyQ7A0SlJd4HaymUHhHIx6oOdbxQtk",
+      imageCredit: { text: "@지인", url: "" },
 
       // 소속
       affiliation: { type: "house", name: "HUFFLEPUFF" },
@@ -122,8 +122,8 @@ export const characterData = {
 
       // 기본 정보
       name: { kr: "모리슨 벨 라이어", en: "MORRISON BELL LIAR" },
-      image: "", // 프로필 이미지 URL
-      imageCredit: { text: "", url: "" },
+      image: "https://lh3.googleusercontent.com/d/1nowOrjgIuAobCsT-AF56G0-OuqBhtg0b",
+      imageCredit: { text: "neka", url: "https://www.neka.cc/composer/14237" },
 
       // 소속
       affiliation: { type: "house", name: "HUFFLEPUFF" },
@@ -225,8 +225,8 @@ export const characterData = {
 
       // 기본 정보
       name: { kr: "아난케 에이와스 리드맨", en: "ANANKE AIWASS LEADMAN" },
-      image: "", // 프로필 이미지 URL
-      imageCredit: { text: "", url: "" },
+      image: "https://lh3.googleusercontent.com/d/1wgx1oQV3rsfzln_f3SkASSALibOghXid",
+      imageCredit: { text: "neka", url: "https://www.neka.cc/composer/14237" },
 
       // 소속
       affiliation: { type: "order", name: "ORDER OF THE PHOENIX" },

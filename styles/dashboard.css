@@ -312,6 +312,15 @@
     color: var(--char-theme);
 }
 
+.avatar-credit.placeholder {
+    opacity: 0.5;
+}
+
+.avatar-credit .credit-placeholder {
+    font-style: italic;
+    color: var(--char-text-muted);
+}
+
 /* 우측 열: 이름 + 성격 */
 .header-right {
     display: flex;

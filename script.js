@@ -398,24 +398,34 @@ function renderCharacterProfile(age = currentAge) {
     const charAvatar = document.getElementById('char-avatar');
     const avatarPlaceholder = document.getElementById('avatar-placeholder');
     if (charAvatar) {
-        // 이미지 URL이 있으면 표시, 없으면 플레이스홀더
-        charAvatar.src = '';
-        if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        if (profile.image) {
+            // 이미지 URL이 있으면 표시
+            charAvatar.src = profile.image;
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+        } else {
+            // 이미지가 없으면 플레이스홀더 표시
+            charAvatar.src = '';
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        }
     }
 
     // 이미지 출처
     const avatarCredit = document.getElementById('avatar-credit');
     if (avatarCredit) {
         if (profile.imageCredit && profile.imageCredit.text) {
+            // 출처 데이터가 있는 경우
             if (profile.imageCredit.url) {
                 avatarCredit.innerHTML = `illust by <a href="${profile.imageCredit.url}" target="_blank" rel="noopener noreferrer">${profile.imageCredit.text}</a>`;
             } else {
                 avatarCredit.textContent = `illust by ${profile.imageCredit.text}`;
             }
-            avatarCredit.style.display = 'block';
+            avatarCredit.classList.remove('placeholder');
         } else {
-            avatarCredit.style.display = 'none';
+            // 출처 데이터가 없는 경우 placeholder 표시
+            avatarCredit.innerHTML = `<span class="credit-placeholder">illust by —</span>`;
+            avatarCredit.classList.add('placeholder');
         }
+        avatarCredit.style.display = 'block';
     }
 
     // 이름 섹션
