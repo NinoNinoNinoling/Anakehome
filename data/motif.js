@@ -67,37 +67,37 @@ export const motifData = [
         description: "역대 최고 수준의 재능을 가진 천재 마술사."
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/q9uOq2JuoRWzF0p5kYbOijWaDusi8gI6Gjl1KrB-bV6d_DOvInFTE5Pe01Xv6YZJkazloJT1EUR1UhnUhnI264QNkLfwpDTnTvgvuOxPgNocYY3YVfdhNL3O-kmIIpXxJB-Exq3RACaI7xU7gfndfA.webp",
         title: "푸른수염",
         source: "푸른수염",
         description: ""
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/mhNB3nivYw3dpzNujYPW9c-DiJQ59YsKI5W5goLH14bmdsjFlo2Pw5vchJCPVWTu9pBcljHrr2xAh-3puRkqrFkOIy0jDyQNBZfsWScKraQEUKSnGWB87uKg_Mg6Tt2Uwp9ES9hWKWF-mcQTHSPz6w.webp",
         title: "인어공주",
         source: "인어공주",
         description: ""
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/Mbrt_RasRnYgAHErxFYh_StA5m3sgmk6WKBJooIHbWnCvXLtFP28CaLqYphihNAL0GFqSDSqqxqfj8BRp7P77bv1osLeFf0dXLHNoyB4JpcW2Ct6p5KqhYH8Vl7J3qU8QiPvJV_vKOyUtGUhydcsUw.webp",
         title: "에스프레소 빈즈",
         source: "아메리카노 엑소더스",
-        description: ""
+        description: "주인공 아메리카노 빈즈(아멜)의 어머니. 영주와 후계자 전원 포함해서 현재 귀족 중 후계자이자 자식인 아멜과 함께 독보적인 마력량을 지니고 있어 기득권 세력의 귀족들에게 눈엣가시 취급을 받는다."
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/rkdBgXuFosKpOyn-__T3Pu-u7ev4LBAA_zMzKPgsafptjqHcvUvfoIpS8UBuGJYuZ7nU2SrxTyPaemGSUWeOre6-UjQbVAovhZb3MoKsMczjrxuSOkw6ok6A17d85rWx_Q1HpSShsmOcE9lCmJjlJg.webp",
         title: "오올헤약",
         source: "명일방주",
-        description: ""
+        description: "전 메이랜더 재단 소속 특수 요원으로, 켈시 선생과 박사의 추천으로 로도스 아일랜드에 합류했다."
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/EOhycYTzVXQehwtRyJXjmuQB0t8-2SI5JmwLl-i6MzMscN9-wekcUrGVWzH5qdFVSa-eJUI5n91EG-8ekDGzQZK1vg7UCg1kpJ_Ddme_2LKBwmiiNem6ma9I--FWhKdiVuoxptqtUV8I0TP1kOubjA.webp",
         title: "료우기 시키 (경계식)",
         source: "공의 경계",
         description: ""
     },
     {
-        image: "",
+        image: "https://i.namu.wiki/i/MuEMShClGtAG5v28fe6BYJOQZqojQ-zRYW6FqIsQNYhbtEzpx7YD3rm2kg_Iv3vHi3i1Ob5-Uag7Io330AMP4P85l5uQuToxxCocPE8OhQ-fsiQVAarGCscCVBApBi5ke6DfWlbCLEYO-GEvbLK-iw.webp",
         title: "C.C.",
         source: "코드 기어스",
         description: ""
