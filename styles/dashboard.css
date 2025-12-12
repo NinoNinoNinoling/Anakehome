@@ -483,6 +483,17 @@
     font-size: 11px;
 }
 
+/* 무드곡 링크 */
+.mood-song-link {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.mood-song-link:hover {
+    color: var(--char-theme);
+}
+
 .color-preview {
     width: 14px;
     height: 14px;

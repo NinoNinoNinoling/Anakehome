@@ -313,9 +313,14 @@ function switchSection(sectionName) {
         targetMenuItem.classList.add('active');
     }
 
-    // 배경 음악 재생 (config에 정의된 섹션에서만 재생)
+    // 배경 음악 처리
+    // - dashboard: 해당 나이대의 배경 음악 시작
+    // - motif/guide: 기존 배경 음악 유지
+    // - playlist: 자체 플레이어가 있으므로 배경 음악 정지
     if (config.bgMusicSections.includes(sectionName)) {
         playBackgroundMusic(sectionName);
+    } else if (config.keepBgMusicSections && config.keepBgMusicSections.includes(sectionName)) {
+        // 기존 배경 음악 유지 (아무 작업 안함)
     } else {
         stopAllBackgroundMusic();
     }
@@ -505,11 +510,15 @@ function renderCharacterProfile(age = currentAge) {
     const magicInfoContent = document.getElementById('magic-info-content');
     if (magicInfoContent) {
         const themeColor = profile.themeColorAccent || profile.themeColor;
+        const moodSong = profile.magic.moodSong;
+        const moodSongValue = moodSong.url
+            ? `<a href="${moodSong.url}" target="_blank" rel="noopener noreferrer" class="mood-song-link">${moodSong.title} (${moodSong.artist})</a>`
+            : `${moodSong.title} (${moodSong.artist})`;
         const magicInfo = [
             { label: '지팡이', value: `${common.wand.wood} / ${common.wand.core}` },
             { label: '길이 / 유연성', value: `${common.wand.length} / ${common.wand.flexibility}` },
             { label: '테마색', value: themeColor, color: themeColor },
-            { label: '무드곡', value: `${profile.magic.moodSong.title} (${profile.magic.moodSong.artist})`, muted: true }
+            { label: '무드곡', value: moodSongValue, muted: true, isHtml: true }
         ];
 
         magicInfoContent.innerHTML = magicInfo.map(info =>
@@ -737,11 +746,13 @@ function updateDashboardBgMusic(age) {
             bgPlayers['dashboard'].pauseVideo();
         }
 
-        // 새 비디오 로드
-        bgPlayers['dashboard'].loadVideoById({
-            videoId: char.bgMusic.youtubeId,
+        // 새 플레이리스트 로드 (무한 반복을 위해)
+        bgPlayers['dashboard'].cuePlaylist({
+            playlist: [char.bgMusic.youtubeId],
+            index: 0,
             startSeconds: 0
         });
+        bgPlayers['dashboard'].setLoop(true);
 
         // 대시보드가 활성화되어 있으면 재생
         if (currentBgPlayer === 'dashboard') {
@@ -759,11 +770,15 @@ function renderMotifPage() {
     motifGrid.innerHTML = motifData.map(motif =>
         `<div class="motif-main-item">
             <div class="motif-main-image">
-                <img src="${motif.image}" alt="${motif.title}">
+                ${motif.image
+                    ? `<img src="${motif.image}" alt="${motif.title}">`
+                    : `<div class="motif-placeholder"><span>${motif.title.charAt(0)}</span></div>`
+                }
             </div>
             <div class="motif-main-info">
                 <h3>${motif.title}</h3>
-                <p>${motif.description}</p>
+                ${motif.source ? `<span class="motif-source">${motif.source}</span>` : ''}
+                ${motif.description ? `<p>${motif.description}</p>` : ''}
             </div>
         </div>`
     ).join('');

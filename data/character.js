@@ -73,7 +73,7 @@ export const characterData = {
 
       // 마법 정보
       magic: {
-        moodSong: { title: "없어, 없어", artist: "니노마에 이나이스" }
+        moodSong: { title: "없어, 없어", artist: "니노마에 이나이스", url: "https://www.youtube.com/watch?v=injd7gHrIGU" }
       },
 
       // 배경 스토리
@@ -89,7 +89,7 @@ export const characterData = {
 
       // 배경 음악
       bgMusic: {
-        youtubeId: "dQw4w9WgXcQ", // 실제 YouTube ID로 교체 필요
+        youtubeId: "injd7gHrIGU",
         title: "없어, 없어 (니노마에 이나이스 커버)"
       },
 
@@ -173,7 +173,7 @@ export const characterData = {
 
       // 마법 정보
       magic: {
-        moodSong: { title: "All Alone With You", artist: "Yoei" }
+        moodSong: { title: "All Alone With You", artist: "Yoel", url: "https://youtu.be/uGxab-AbiBc" }
       },
 
       // 배경 스토리
@@ -193,8 +193,8 @@ export const characterData = {
 
       // 배경 음악
       bgMusic: {
-        youtubeId: "dQw4w9WgXcQ", // 실제 YouTube ID로 교체 필요
-        title: "All Alone With You (Yoei Cover)"
+        youtubeId: "uGxab-AbiBc",
+        title: "All Alone With You (Yoel Cover)"
       },
 
       // 갤러리
@@ -276,7 +276,7 @@ export const characterData = {
 
       // 마법 정보
       magic: {
-        moodSong: { title: "가짜 얼굴", artist: "dongdang" }
+        moodSong: { title: "가짜 얼굴", artist: "dongdang", url: "https://www.youtube.com/watch?v=qRKlNp_rowc" }
       },
 
       // 배경 스토리
@@ -298,7 +298,7 @@ export const characterData = {
 
       // 배경 음악
       bgMusic: {
-        youtubeId: "dQw4w9WgXcQ", // 실제 YouTube ID로 교체 필요
+        youtubeId: "qRKlNp_rowc",
         title: "가짜 얼굴 (dongdang cover)"
       },
 
