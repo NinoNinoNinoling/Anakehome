@@ -45,6 +45,9 @@ export const config = {
       `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=${bg}&color=${color}`
   },
 
-  // 배경 음악이 재생되는 섹션
-  bgMusicSections: ['dashboard', 'guide']
+  // 배경 음악이 재생되는 섹션 (자체 배경 음악 시작)
+  bgMusicSections: ['dashboard'],
+
+  // 기존 배경 음악을 유지하는 섹션
+  keepBgMusicSections: ['motif', 'guide']
 };

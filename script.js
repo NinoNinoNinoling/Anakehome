@@ -313,9 +313,14 @@ function switchSection(sectionName) {
         targetMenuItem.classList.add('active');
     }
 
-    // 배경 음악 재생 (config에 정의된 섹션에서만 재생)
+    // 배경 음악 처리
+    // - dashboard: 해당 나이대의 배경 음악 시작
+    // - motif/guide: 기존 배경 음악 유지
+    // - playlist: 자체 플레이어가 있으므로 배경 음악 정지
     if (config.bgMusicSections.includes(sectionName)) {
         playBackgroundMusic(sectionName);
+    } else if (config.keepBgMusicSections && config.keepBgMusicSections.includes(sectionName)) {
+        // 기존 배경 음악 유지 (아무 작업 안함)
     } else {
         stopAllBackgroundMusic();
     }
