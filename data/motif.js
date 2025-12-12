@@ -1,10 +1,10 @@
 // 모티프 데이터 (공통)
 export const motifData = [
     {
-        image: "",
+        image: "https://i.namu.wiki/i/wLakdohH7pvINpH6aCcAzw1yWF8fQYhsVA9p0mXTkj8Ss4HLySSugx1bHgp-0hecpijCR7iZpQ5TbSZokv_Y6eSeLCIL9FlBYHoX2KrtlPJX4Y21H93pS8gBqL12STyl8UNIAT8VSDoBfSSwB91nEQ.webp",
         title: "마츠자카 사토",
         source: "해피 슈가 라이프",
-        description: ""
+        description: "만화 해피 슈가 라이프의 주인공. 달콤한 것, 즉 사랑을 누구보다 더 갈구한다. 아마 어릴 때부터의 영향으로 애정결핍이 있는 듯하다."
     },
     {
         image: "",
