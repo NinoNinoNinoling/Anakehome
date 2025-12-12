@@ -398,9 +398,15 @@ function renderCharacterProfile(age = currentAge) {
     const charAvatar = document.getElementById('char-avatar');
     const avatarPlaceholder = document.getElementById('avatar-placeholder');
     if (charAvatar) {
-        // 이미지 URL이 있으면 표시, 없으면 플레이스홀더
-        charAvatar.src = '';
-        if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        if (profile.image) {
+            // 이미지 URL이 있으면 표시
+            charAvatar.src = profile.image;
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+        } else {
+            // 이미지가 없으면 플레이스홀더 표시
+            charAvatar.src = '';
+            if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        }
     }
 
     // 이미지 출처
