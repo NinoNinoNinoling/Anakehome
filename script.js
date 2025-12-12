@@ -770,11 +770,15 @@ function renderMotifPage() {
     motifGrid.innerHTML = motifData.map(motif =>
         `<div class="motif-main-item">
             <div class="motif-main-image">
-                <img src="${motif.image}" alt="${motif.title}">
+                ${motif.image
+                    ? `<img src="${motif.image}" alt="${motif.title}">`
+                    : `<div class="motif-placeholder"><span>${motif.title.charAt(0)}</span></div>`
+                }
             </div>
             <div class="motif-main-info">
                 <h3>${motif.title}</h3>
-                <p>${motif.description}</p>
+                ${motif.source ? `<span class="motif-source">${motif.source}</span>` : ''}
+                ${motif.description ? `<p>${motif.description}</p>` : ''}
             </div>
         </div>`
     ).join('');

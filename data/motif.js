@@ -1,53 +1,105 @@
 // 모티프 데이터 (공통)
 export const motifData = [
     {
-        image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400",
-        title: "모티프 1",
-        description: "첫 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "마츠자카 사토",
+        source: "해피 슈가 라이프",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400",
-        title: "모티프 2",
-        description: "두 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "유즈리하 이노리",
+        source: "길티 크라운",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400",
-        title: "모티프 3",
-        description: "세 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "마토 사쿠라",
+        source: "Fate Stay Night",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",
-        title: "모티프 4",
-        description: "네 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "멜키오르 리오그난",
+        source: "문송안함",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400",
-        title: "모티프 5",
-        description: "다섯 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "프리스티스",
+        source: "명일방주",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
-        title: "모티프 6",
-        description: "여섯 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "히이라기 마히루",
+        source: "종말의 세라프",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1501612780327-45045538702b?w=400",
-        title: "모티프 7",
-        description: "일곱 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "이졸데 디터스트로프",
+        source: "Reverse:1999",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1502691876148-a84978e59af8?w=400",
-        title: "모티프 8",
-        description: "여덟 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "공주",
+        source: "Slay the Princess",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400",
-        title: "모티프 9",
-        description: "아홉 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "사토의 이모",
+        source: "해피 슈가 라이프",
+        description: ""
     },
     {
-        image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400",
-        title: "모티프 10",
-        description: "열 번째 모티프에 대한 설명을 작성합니다."
+        image: "",
+        title: "메데이아",
+        source: "Fate Stay Night",
+        description: ""
+    },
+    {
+        image: "",
+        title: "사죠 마나카",
+        source: "창은의 프래그먼트",
+        description: ""
+    },
+    {
+        image: "",
+        title: "푸른수염",
+        source: "푸른수염",
+        description: ""
+    },
+    {
+        image: "",
+        title: "인어공주",
+        source: "인어공주",
+        description: ""
+    },
+    {
+        image: "",
+        title: "에스프레소 빈즈",
+        source: "아메리카노 엑소더스",
+        description: ""
+    },
+    {
+        image: "",
+        title: "오올헤약",
+        source: "명일방주",
+        description: ""
+    },
+    {
+        image: "",
+        title: "료우기 시키 (경계식)",
+        source: "공의 경계",
+        description: ""
+    },
+    {
+        image: "",
+        title: "C.C.",
+        source: "코드 기어스",
+        description: ""
     }
 ];
