@@ -194,6 +194,46 @@ export function loadSongUI(index) {
 }
 
 // ============================================================
+// 나이 탭 렌더링
+// ============================================================
+
+/**
+ * 나이 탭 동적 생성
+ */
+export function renderAgeTabs() {
+    const container = document.getElementById('age-tabs-container');
+    if (!container) return;
+    
+    const profiles = characterData.profiles;
+    const ages = Object.keys(profiles);
+    
+    if (ages.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    
+    // 탭이 1개면 숨김
+    if (ages.length === 1) {
+        container.parentElement.style.display = 'none';
+        state.currentAge = ages[0];
+        return;
+    }
+    
+    container.innerHTML = ages.map((age, index) => {
+        const profile = profiles[age];
+        const label = profile.tabLabel || `${age}세`;
+        const isActive = age === String(state.currentAge) || (index === 0 && !state.currentAge);
+        
+        return `<button class="age-tab ${isActive ? 'active' : ''}" data-age="${age}">${label}</button>`;
+    }).join('');
+    
+    // 기본 나이 설정
+    if (!state.currentAge || !profiles[state.currentAge]) {
+        state.currentAge = ages[0];
+    }
+}
+
+// ============================================================
 // 캐릭터 프로필 렌더링
 // ============================================================
 
