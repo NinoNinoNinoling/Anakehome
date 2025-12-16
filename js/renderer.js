@@ -7,7 +7,7 @@ import { characterData } from '../data/character.js';
 import { ownerData } from '../data/owner.js';
 import { motifData } from '../data/motif.js';
 import { state, getDOM } from './store.js';
-import { renderIcons } from './utils.js';
+import { renderIcons, safeGet } from './utils.js';
 
 // ============================================================
 // 플레이리스트 렌더링
@@ -124,20 +124,26 @@ export function updateSearchResultCount() {
  * 곡 UI 로드
  */
 export function loadSongUI(index) {
-    if (!playlistData[index]) return;
-    
     const song = playlistData[index];
+    if (!song) {
+        console.warn('곡 데이터 없음:', index);
+        return;
+    }
+    
     const dom = getDOM();
     
     // 앨범 아트
     if (dom.player.albumArt) {
-        dom.player.albumArt.src = song.cover;
+        dom.player.albumArt.src = song.cover || '';
+        dom.player.albumArt.onerror = () => {
+            dom.player.albumArt.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23333" width="100" height="100"/><text x="50" y="55" text-anchor="middle" fill="%23666" font-size="40">♪</text></svg>';
+        };
     }
     
     // 제목
     if (dom.player.title) {
-        dom.player.title.innerText = song.title;
-        dom.player.title.onclick = () => window.open(song.link, '_blank');
+        dom.player.title.innerText = song.title || 'Unknown Title';
+        dom.player.title.onclick = song.link ? () => window.open(song.link, '_blank') : null;
     }
     
     // 아티스트
@@ -146,7 +152,7 @@ export function loadSongUI(index) {
     }
     
     // 배경 이미지
-    if (dom.player.zone) {
+    if (dom.player.zone && song.cover) {
         dom.player.zone.style.setProperty('--player-bg-image', `url('${song.cover}')`);
     }
     
@@ -160,8 +166,9 @@ export function loadSongUI(index) {
 
     // 코멘트
     if (dom.player.comment) {
-        if (song.comment && song.comment.trim() !== '') {
-            dom.player.comment.innerText = `"${song.comment}"`;
+        const comment = (song.comment || '').trim();
+        if (comment) {
+            dom.player.comment.innerText = `"${comment}"`;
             dom.player.comment.style.display = 'block';
         } else {
             dom.player.comment.style.display = 'none';
@@ -173,8 +180,9 @@ export function loadSongUI(index) {
 
     // 가사
     if (dom.player.lyrics) {
-        if (song.lyrics && song.lyrics.trim() !== '') {
-            dom.player.lyrics.innerHTML = song.lyrics;
+        const lyrics = (song.lyrics || '').trim();
+        if (lyrics) {
+            dom.player.lyrics.innerHTML = lyrics;
             dom.player.lyrics.style.display = 'block';
         } else {
             dom.player.lyrics.innerHTML = `<div style="margin-top:2rem; font-size:0.85rem; color:#666;">등록된 가사가 없습니다.</div>`;
@@ -190,9 +198,13 @@ export function loadSongUI(index) {
 // ============================================================
 
 export function renderCharacterProfile(age = state.currentAge) {
-    const profile = characterData.profiles[age];
-    const common = characterData.common;
-    if (!profile) return;
+    const profile = safeGet(characterData, `profiles.${age}`);
+    const common = safeGet(characterData, 'common', {});
+    
+    if (!profile) {
+        console.warn('프로필 데이터 없음:', age);
+        return;
+    }
 
     const dom = getDOM();
     
