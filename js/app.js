@@ -5,7 +5,7 @@
 import { playlistData } from '../data/playlist.js';
 import { config } from '../data/config.js';
 import { state, getDOM, refreshDOM } from './store.js';
-import { showLoading, debounce, renderIcons } from './utils.js';
+import { showLoading, debounce, renderIcons, safeFetch, showError } from './utils.js';
 import { renderPlaylist, updateSearchResultCount, renderCharacterProfile, renderOwnerProfile, renderMotifPage } from './renderer.js';
 import { 
     loadYouTubeAPI, 
@@ -30,20 +30,31 @@ import {
 
 async function loadComponent(sectionId, componentPath) {
     showLoading(sectionId, '컴포넌트 로딩 중...');
-    try {
-        const response = await fetch(componentPath);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const html = await response.text();
-        document.getElementById(sectionId).innerHTML = html;
-    } catch (error) {
-        console.error(`Failed to load ${componentPath}:`, error);
-        document.getElementById(sectionId).innerHTML = `
-            <div class="load-error">
-                <p>컴포넌트 로드 실패</p>
-                <button onclick="location.reload()">새로고침</button>
-            </div>
-        `;
+    
+    const response = await safeFetch(componentPath);
+    
+    if (response) {
+        try {
+            const html = await response.text();
+            document.getElementById(sectionId).innerHTML = html;
+        } catch (error) {
+            console.error(`Failed to parse ${componentPath}:`, error);
+            showComponentError(sectionId);
+        }
+    } else {
+        showComponentError(sectionId);
     }
+}
+
+function showComponentError(sectionId) {
+    document.getElementById(sectionId).innerHTML = `
+        <div class="load-error">
+            <i data-lucide="alert-triangle" size="32"></i>
+            <p>컴포넌트 로드 실패</p>
+            <button onclick="location.reload()">새로고침</button>
+        </div>
+    `;
+    renderIcons();
 }
 
 async function loadAllComponents() {
