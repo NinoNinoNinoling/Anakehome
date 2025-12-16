@@ -207,3 +207,72 @@
     font-family: inherit;
     margin: 0 2px;
 }
+
+/* ============================================================
+   볼륨 컨트롤
+   ============================================================ */
+.volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.btn-volume {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #666);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.btn-volume:hover {
+    color: var(--text-color, #e8e6e3);
+}
+
+.btn-volume.muted {
+    color: var(--highlight-color, #B2B0E8);
+}
+
+.volume-slider-wrap {
+    position: relative;
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.volume-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--highlight-color, #B2B0E8);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: width 0.1s;
+}
+
+#volume-slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 16px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* 호버 시 슬라이더 보이기 */
+.volume-slider-wrap:hover .volume-fill,
+.volume-slider-wrap:focus-within .volume-fill {
+    background: var(--highlight-color, #B2B0E8);
+    filter: brightness(1.2);
+}
