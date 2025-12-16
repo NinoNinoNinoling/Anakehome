@@ -1,4 +1,7 @@
-// 캐릭터 데이터 (통합)
+// ============================================================
+// 캐릭터 데이터
+// ============================================================
+
 export const characterData = {
   // 공통 정보 (모든 나이대에 공유)
   common: {
@@ -20,6 +23,9 @@ export const characterData = {
   // 나이별 프로필
   profiles: {
     "11": {
+      // ★ 탭 표시용 라벨
+      tabLabel: "1학년 (11세)",
+      
       // 테마
       themeColor: "#FFD800",
 
@@ -86,6 +92,9 @@ export const characterData = {
     },
 
     "17": {
+      // ★ 탭 표시용 라벨
+      tabLabel: "7학년 (17세)",
+      
       // 테마
       themeColor: "#FBEFEF",
       themeColorAccent: "#c9a090",
@@ -178,6 +187,9 @@ export const characterData = {
     },
 
     "29": {
+      // ★ 탭 표시용 라벨
+      tabLabel: "성인 (29세)",
+      
       // 테마
       themeColor: "#B2B0E8",
 
