@@ -17,6 +17,8 @@ let isRepeatOne = false;
 let recentPlays = [];
 let filteredPlaylist = [...playlistData]; // 검색용 필터링된 목록
 let searchQuery = ''; // 현재 검색어
+let currentVolume = 50; // 볼륨 (0-100)
+let isMuted = false; // 음소거 상태
 
 // 백그라운드 음악 플레이어
 let bgPlayers = {};
@@ -75,6 +77,116 @@ function extractYouTubeId(url) {
         else if (urlObj.hostname.includes('youtu.be')) return urlObj.pathname.slice(1).split('?')[0];
     } catch(e) {}
     return "";
+}
+
+// ============================================================
+// [2.5] 볼륨 제어
+// ============================================================
+
+// localStorage에서 볼륨 불러오기
+function loadVolumeFromStorage() {
+    const savedVolume = localStorage.getItem('playerVolume');
+    const savedMuted = localStorage.getItem('playerMuted');
+    
+    if (savedVolume !== null) {
+        currentVolume = parseInt(savedVolume, 10);
+    }
+    if (savedMuted !== null) {
+        isMuted = savedMuted === 'true';
+    }
+}
+
+// 볼륨 저장
+function saveVolumeToStorage() {
+    localStorage.setItem('playerVolume', currentVolume);
+    localStorage.setItem('playerMuted', isMuted);
+}
+
+// 볼륨 설정
+function setVolume(value) {
+    currentVolume = Math.max(0, Math.min(100, value));
+    
+    if (player && playerReady) {
+        if (isMuted) {
+            player.mute();
+        } else {
+            player.unMute();
+            player.setVolume(currentVolume);
+        }
+    }
+    
+    updateVolumeUI();
+    saveVolumeToStorage();
+}
+
+// 음소거 토글
+function toggleMute() {
+    isMuted = !isMuted;
+    
+    if (player && playerReady) {
+        if (isMuted) {
+            player.mute();
+        } else {
+            player.unMute();
+            player.setVolume(currentVolume);
+        }
+    }
+    
+    updateVolumeUI();
+    saveVolumeToStorage();
+}
+
+// 볼륨 UI 업데이트
+function updateVolumeUI() {
+    const slider = document.getElementById('volume-slider');
+    const icon = document.getElementById('btn-volume');
+    const fill = document.getElementById('volume-fill');
+    
+    if (slider) {
+        slider.value = currentVolume;
+    }
+    
+    if (fill) {
+        fill.style.width = `${isMuted ? 0 : currentVolume}%`;
+    }
+    
+    if (icon) {
+        let iconName = 'volume-2';
+        if (isMuted || currentVolume === 0) {
+            iconName = 'volume-x';
+        } else if (currentVolume < 50) {
+            iconName = 'volume-1';
+        }
+        icon.innerHTML = `<i data-lucide="${iconName}" size="18"></i>`;
+        icon.classList.toggle('muted', isMuted);
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+}
+
+// 볼륨 슬라이더 이벤트 설정
+function setupVolumeControl() {
+    loadVolumeFromStorage();
+    
+    const slider = document.getElementById('volume-slider');
+    const muteBtn = document.getElementById('btn-volume');
+    
+    if (slider) {
+        slider.value = currentVolume;
+        
+        slider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value, 10);
+            if (isMuted && value > 0) {
+                isMuted = false;
+            }
+            setVolume(value);
+        });
+    }
+    
+    if (muteBtn) {
+        muteBtn.addEventListener('click', toggleMute);
+    }
+    
+    updateVolumeUI();
 }
 
 // ============================================================
@@ -151,7 +263,15 @@ window.onYouTubeIframeAPIReady = function() {
     }, config.timing.bgMusicInitDelay);
 }
 
-function onPlayerReady(event) { playerReady = true; }
+function onPlayerReady(event) { 
+    playerReady = true;
+    // 저장된 볼륨 적용
+    if (isMuted) {
+        player.mute();
+    } else {
+        player.setVolume(currentVolume);
+    }
+}
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
@@ -460,9 +580,7 @@ function setupKeyboardShortcuts() {
                 break;
             case 'm': // M - 음소거 토글
             case 'M':
-                if (player && playerReady) {
-                    player.isMuted() ? player.unMute() : player.mute();
-                }
+                toggleMute();
                 break;
             case '/': // / - 검색 포커스
                 e.preventDefault();
@@ -943,6 +1061,9 @@ function renderMotifPage() {
 // [14] 초기화
 // ============================================================
 document.addEventListener('DOMContentLoaded', async () => {
+    // 저장된 볼륨 먼저 로드
+    loadVolumeFromStorage();
+    
     await loadAllComponents();
 
     setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, config.timing.iconRenderDelay);
@@ -952,6 +1073,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderMotifPage();
     setupAgeTabListeners();
     setupPlaylistSearch();
+    setupVolumeControl();
     setupKeyboardShortcuts();
 
     // 섹션 전환 이벤트
