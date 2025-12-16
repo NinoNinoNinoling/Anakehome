@@ -7,7 +7,7 @@ import { characterProfiles } from '../data/character.js';
 import { ownerData } from '../data/owner.js';
 import { config } from '../data/config.js';
 import { state, players, timers, getDOM } from './store.js';
-import { extractYouTubeId, formatTime, setStorage, renderIcons } from './utils.js';
+import { extractYouTubeId, formatTime, setStorage, renderIcons, showError, safeGet } from './utils.js';
 import { renderPlaylist, loadSongUI, updatePlaylistActiveState } from './renderer.js';
 
 // ============================================================
@@ -29,14 +29,19 @@ export function loadYouTubeAPI() {
  */
 export function setupYouTubeReady() {
     window.onYouTubeIframeAPIReady = function() {
-        if (playlistData.length > 0) {
+        try {
+            if (playlistData.length === 0) {
+                console.warn('플레이리스트가 비어있습니다');
+                return;
+            }
+            
             // 플레이리스트 데이터 가공
             playlistData.forEach(item => {
                 const videoId = extractYouTubeId(item.link);
                 item.youtubeId = videoId;
                 item.cover = videoId
                     ? config.api.youtubeThumbnail(videoId)
-                    : config.api.uiAvatars(item.title);
+                    : config.api.uiAvatars(item.title || 'Unknown');
             });
 
             // 메인 플레이어 생성
@@ -47,21 +52,46 @@ export function setupYouTubeReady() {
                 playerVars: config.player.playerVars,
                 events: {
                     'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
                 }
             });
 
             state.filteredPlaylist = [...playlistData];
             renderPlaylist();
             loadSongUI(0);
+        } catch (error) {
+            console.error('YouTube 플레이어 초기화 실패:', error);
+            showError('플레이어 초기화 실패');
         }
 
         // 백그라운드 음악 초기화
         setTimeout(() => {
-            initBackgroundPlayers();
-            playBackgroundMusic(config.defaults.section);
+            try {
+                initBackgroundPlayers();
+                playBackgroundMusic(config.defaults.section);
+            } catch (error) {
+                console.error('백그라운드 플레이어 초기화 실패:', error);
+            }
         }, config.timing.bgMusicInitDelay);
     };
+}
+
+function onPlayerError(event) {
+    const errorCodes = {
+        2: '잘못된 동영상 ID',
+        5: 'HTML5 플레이어 오류',
+        100: '동영상을 찾을 수 없음',
+        101: '재생이 허용되지 않음',
+        150: '재생이 허용되지 않음'
+    };
+    
+    const message = errorCodes[event.data] || `알 수 없는 오류 (${event.data})`;
+    console.error('YouTube Player Error:', message);
+    showError(`재생 오류: ${message}`);
+    
+    // 다음 곡으로 자동 이동
+    setTimeout(() => playNext(), 2000);
 }
 
 function onPlayerReady(event) {
@@ -104,13 +134,26 @@ export function togglePlay() {
 }
 
 export function playSpecificSong(index) {
+    if (index < 0 || index >= playlistData.length) {
+        console.warn('잘못된 곡 인덱스:', index);
+        return;
+    }
+    
+    const song = playlistData[index];
+    if (!song) {
+        showError('곡 정보를 찾을 수 없습니다');
+        return;
+    }
+    
     state.currentSongIndex = index;
     loadSongUI(index);
     
-    if (players.main && state.playerReady && playlistData[index].youtubeId) {
-        players.main.loadVideoById(playlistData[index].youtubeId);
+    if (players.main && state.playerReady && song.youtubeId) {
+        players.main.loadVideoById(song.youtubeId);
         setTimeout(() => players.main.playVideo(), config.timing.videoLoadDelay);
-        addToRecentPlays(playlistData[index]);
+        addToRecentPlays(song);
+    } else if (!song.youtubeId) {
+        showError('유효하지 않은 YouTube 링크입니다');
     }
 }
 
