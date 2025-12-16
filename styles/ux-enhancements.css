@@ -5,6 +5,44 @@
    - 재생 인디케이터
    ============================================================ */
 
+/* 나이 탭 (동적 생성) */
+.age-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.age-tabs-inner {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.age-tab {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.age-tab:hover {
+    color: var(--text-color);
+    background: var(--border-light);
+}
+
+.age-tab.active {
+    color: var(--bg-color);
+    background: var(--highlight-color);
+    font-weight: 500;
+}
+
 /* 로딩 스피너 */
 .loading-spinner {
     display: flex;
