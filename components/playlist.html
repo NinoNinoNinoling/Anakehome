@@ -1,20 +1,21 @@
 <aside class="zone-list">
     <div class="list-header">Ananke Playlist</div>
+    <div class="playlist-search-wrap">
+        <div class="playlist-search-inner">
+            <input type="text" id="playlist-search" placeholder="제목, 아티스트 검색... ( / )">
+        </div>
+        <div id="search-result-count"></div>
+    </div>
     <div class="song-list-container" id="playlist-container"></div>
 </aside>
-
 <main class="zone-player" id="player-zone">
     <img src="" alt="Album Art" class="album-art-large" id="main-album-art">
-
     <div class="player-info">
         <h1 id="main-title">곡을 선택하세요</h1>
         <p id="main-artist">-</p>
-
         <div class="hashtag-container" id="main-hashtags"></div>
-
         <p id="main-comment" class="player-comment"></p>
     </div>
-
     <div class="progress-container">
         <span id="current-time">0:00</span>
         <div class="progress-bar-bg" id="progress-bar-bg">
@@ -22,7 +23,6 @@
         </div>
         <span id="total-time">0:00</span>
     </div>
-
     <div class="controls">
         <button class="btn-control" id="btn-shuffle"><i data-lucide="shuffle" size="20"></i></button>
         <button class="btn-control" id="btn-prev"><i data-lucide="skip-back" size="28"></i></button>
@@ -31,7 +31,6 @@
         <button class="btn-control" id="btn-repeat"><i data-lucide="repeat" size="20"></i></button>
     </div>
 </main>
-
 <aside class="zone-lyrics">
     <div class="lyrics-title">Lyrics / Info</div>
     <div id="lyrics-content">곡을 선택해주세요.</div>
