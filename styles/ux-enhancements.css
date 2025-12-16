@@ -13,14 +13,14 @@
     justify-content: center;
     padding: 3rem;
     gap: 1rem;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
 }
 
 .spinner {
     width: 24px;
     height: 24px;
-    border: 2px solid var(--border-color, rgba(255, 255, 255, 0.04));
-    border-top-color: var(--text-secondary, #666);
+    border: 2px solid var(--border-color);
+    border-top-color: var(--text-secondary);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
@@ -38,7 +38,7 @@
     padding: 0.75rem 1rem;
     position: sticky;
     top: 0;
-    background: var(--surface-color, #111114);
+    background: var(--surface-color);
     z-index: 10;
 }
 
@@ -53,19 +53,19 @@
     padding: 0.5rem 0.75rem 0.5rem 2rem;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.04));
-    color: var(--text-color, #e8e6e3);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
     font-size: 0.8rem;
     outline: none;
     transition: border-color 0.2s;
 }
 
 #playlist-search::placeholder {
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
 }
 
 #playlist-search:focus {
-    border-bottom-color: var(--highlight-color, #B2B0E8);
+    border-bottom-color: var(--highlight-color);
 }
 
 .playlist-search-inner::before {
@@ -89,13 +89,13 @@
     display: none;
     margin-top: 0.4rem;
     font-size: 0.7rem;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
     text-align: right;
 }
 
 /* 검색 하이라이트 */
 .song-info mark {
-    background: rgba(var(--highlight-rgb, 178, 176, 232), 0.25);
+    background: rgba(var(--highlight-rgb), 0.25);
     color: inherit;
     border-radius: 2px;
     padding: 0 2px;
@@ -107,7 +107,7 @@
     align-items: center;
     justify-content: center;
     padding: 3rem;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
     font-size: 0.8rem;
 }
 
@@ -135,13 +135,13 @@
 
 .song-playing-indicator span {
     width: 2px;
-    background: var(--text-secondary, #666);
+    background: var(--text-secondary);
     border-radius: 1px;
     height: 3px;
 }
 
 .song-playing-indicator.playing span {
-    background: var(--highlight-color, #B2B0E8);
+    background: var(--highlight-color);
     animation: equalizer 0.8s ease-in-out infinite;
 }
 
@@ -171,11 +171,11 @@
     bottom: 1rem;
     right: 1rem;
     padding: 0.4rem 0.6rem;
-    background: var(--bg-tertiary, #1a1a1e);
-    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.04));
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 0.7rem;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s;
@@ -188,7 +188,7 @@
 .keyboard-hint kbd {
     display: inline-block;
     padding: 1px 4px;
-    background: var(--border-color, rgba(255, 255, 255, 0.04));
+    background: var(--border-color);
     border-radius: 2px;
     font-family: inherit;
     margin: 0 2px;
@@ -197,18 +197,23 @@
 /* ============================================================
    볼륨 컨트롤
    ============================================================ */
-.volume-control {
+.controls-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 1.5rem;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .btn-volume {
     background: none;
     border: none;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
     cursor: pointer;
     padding: 4px;
     display: flex;
@@ -218,18 +223,18 @@
 }
 
 .btn-volume:hover {
-    color: var(--text-secondary, #666);
+    color: var(--text-secondary);
 }
 
 .btn-volume.muted {
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
 }
 
 .volume-slider-wrap {
     position: relative;
-    width: 80px;
+    width: 60px;
     height: 3px;
-    background: var(--border-color, rgba(255, 255, 255, 0.04));
+    background: var(--border-color);
     border-radius: 2px;
 }
 
@@ -238,7 +243,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    background: var(--text-secondary, #666);
+    background: var(--text-secondary);
     border-radius: 2px;
     pointer-events: none;
     transition: width 0.1s;
@@ -260,11 +265,11 @@
 
 /* 호버 시 강조 */
 .volume-control:hover .volume-fill {
-    background: var(--highlight-color, #B2B0E8);
+    background: var(--highlight-color);
 }
 
 .volume-control:hover .btn-volume {
-    color: var(--text-secondary, #666);
+    color: var(--text-secondary);
 }
 
 /* ============================================================
@@ -304,7 +309,7 @@
 .lyrics-toggle-btn {
     background: none;
     border: none;
-    color: var(--text-dim, #444);
+    color: var(--text-dim);
     cursor: pointer;
     padding: 2px;
     display: flex;
@@ -314,7 +319,7 @@
 }
 
 .lyrics-toggle-btn:hover {
-    color: var(--text-secondary, #666);
+    color: var(--text-secondary);
 }
 
 .zone-lyrics #lyrics-content {
@@ -379,7 +384,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1rem;
-    background: var(--bg-tertiary, #1a1a1e);
+    background: var(--bg-tertiary);
     border: 1px solid rgba(248, 113, 113, 0.3);
     color: #f87171;
     border-radius: 6px;
@@ -408,7 +413,7 @@
     justify-content: center;
     padding: 3rem;
     gap: 1rem;
-    color: var(--text-secondary, #666);
+    color: var(--text-secondary);
     text-align: center;
 }
 
@@ -423,15 +428,15 @@
 .load-error button {
     padding: 0.4rem 1rem;
     background: transparent;
-    border: 1px solid var(--border-light, rgba(255, 255, 255, 0.08));
+    border: 1px solid var(--border-light);
     border-radius: 4px;
-    color: var(--text-secondary, #666);
+    color: var(--text-secondary);
     font-size: 0.8rem;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
 }
 
 .load-error button:hover {
-    border-color: var(--text-secondary, #666);
-    color: var(--text-color, #e8e6e3);
+    border-color: var(--text-secondary);
+    color: var(--text-color);
 }
