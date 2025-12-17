@@ -49,7 +49,10 @@ export function setupYouTubeReady() {
                 height: String(config.player.height),
                 width: String(config.player.width),
                 videoId: playlistData[0].youtubeId,
-                playerVars: config.player.playerVars,
+                playerVars: {
+                    ...config.player.playerVars,
+                    'origin': window.location.origin // [수정] 보안 경고 방지
+                },
                 events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange,
@@ -351,7 +354,8 @@ function initBackgroundPlayers() {
                 autoplay: 0,
                 controls: 0,
                 loop: 1,
-                playlist: char.bgMusic.youtubeId
+                playlist: char.bgMusic.youtubeId,
+                'origin': window.location.origin // [수정] 보안 경고 방지
             },
             events: {
                 onReady: (event) => {
@@ -372,7 +376,8 @@ function initBackgroundPlayers() {
                 autoplay: 0,
                 controls: 0,
                 loop: 1,
-                playlist: ownerData.bgMusic.youtubeId
+                playlist: ownerData.bgMusic.youtubeId,
+                'origin': window.location.origin // [수정] 보안 경고 방지
             },
             events: {
                 onReady: (event) => {
@@ -403,6 +408,11 @@ export function stopAllBackgroundMusic() {
 }
 
 export function updateDashboardBgMusic(age) {
+    // [수정] 플레이어가 준비되지 않았거나 함수가 없으면 실행 중단 (오류 방지)
+    if (!players.bg['dashboard'] || typeof players.bg['dashboard'].cuePlaylist !== 'function') {
+        return;
+    }
+
     const char = characterProfiles[age];
     
     if (char?.bgMusic?.youtubeId && players.bg['dashboard']) {
@@ -419,7 +429,10 @@ export function updateDashboardBgMusic(age) {
 
         if (state.currentBgPlayer === 'dashboard') {
             setTimeout(() => {
-                players.bg['dashboard'].playVideo();
+                // [추가] 실행 시점에도 다시 한번 확인
+                if (players.bg['dashboard'] && typeof players.bg['dashboard'].playVideo === 'function') {
+                    players.bg['dashboard'].playVideo();
+                }
             }, config.timing.bgMusicSwitchDelay);
         }
     }
