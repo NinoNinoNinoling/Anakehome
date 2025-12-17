@@ -18,6 +18,8 @@
    ======================================== */
 .motif-header {
     margin-bottom: 40px;
+   max-width: 1200px;      /* 그리드와 똑같은 최대 너비 */
+    margin: 0 auto 40px;
 }
 
 .motif-header h1 {
