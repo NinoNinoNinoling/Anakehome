@@ -4,7 +4,8 @@
 
 import { config } from '../data/config.js';
 import { characterData } from '../data/character.js';
-import { state, getDOM, safeGet } from './store.js';
+import { state, getDOM } from './store.js';
+import { safeGet } from './utils.js';
 
 /**
  * 템플릿 문자열에서 값 추출
