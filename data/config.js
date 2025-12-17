@@ -1,35 +1,84 @@
 // 앱 설정 (config)
 export const config = {
   // ==========================================
-  // [NEW] 텍스트 라벨 설정 (세계관에 맞춰 수정하세요)
+  // 필드 정의 (편집기 & 렌더러 공용)
   // ==========================================
-  labels: {
-    // 섹션 제목
-    name: "NAME",
-    basicInfo: "BASIC INFO",
-    birthInfo: "BIRTH INFO",
-    magicInfo: "MAGIC INFO",      // 예: WEAPON INFO, SKILL INFO
-    relationships: "RELATIONSHIPS",
+  fieldDefinitions: {
+    // 공통 정보 필드 (common 객체)
+    common: [
+      { key: 'birthday', type: 'text', label: '생일' },
+      { key: 'birthFlower', type: 'text', label: '탄생화' },
+      { key: 'birthTree', type: 'text', label: '탄생목' },
+      { key: 'birthStone', type: 'text', label: '탄생석' },
+      { key: 'birthColor', type: 'color', label: '탄생색' },
+      { 
+        key: 'wand', 
+        type: 'group', 
+        label: '지팡이', 
+        fields: [
+          { key: 'wood', label: '목재' },
+          { key: 'core', label: '심' },
+          { key: 'length', label: '길이' },
+          { key: 'flexibility', label: '유연성' }
+        ]
+      },
+      { key: 'bloodStatus', type: 'text', label: '혈통' },
+      { key: 'moehua', type: 'text', label: '모에화' }
+    ],
 
-    // 상세 항목 이름 (왼쪽 라벨)
-    heightWeight: "키 / 체중",
-    affiliation: "소속",          // 예: 기숙사, 길드, 학교
-    nationality: "국적",
-    blood: "혈통",                // 예: 종족, 등급
-    
-    birthday: "생일",
-    birthFlowerTree: "탄생화 / 탄생목",
-    birthStone: "탄생석",
-    birthColor: "탄생색",
-    
-    wand: "지팡이",               // 예: 주무기, 능력
-    wandLength: "길이 / 유연성",   // 예: 내구도 / 등급
-    themeColor: "테마색",
-    moodSong: "무드곡"
+    // 프로필별 필드
+    profile: {
+      // 기본 스탯
+      basic: [
+        { key: 'age', type: 'text', label: '나이' },
+        { key: 'height', type: 'text', label: '키' },
+        { key: 'weight', type: 'text', label: '체중' },
+        { key: 'house', type: 'text', label: '소속' },
+        { key: 'nationality', type: 'text', label: '국적' }
+      ],
+      // 추가 정보 (세계관별)
+      magic: [
+        { key: 'moodSong', type: 'song', label: '무드곡' }
+      ]
+    },
+
+    // 정보 카드 구성 (대시보드 표시용)
+    infoCards: [
+      {
+        id: 'basicInfo',
+        title: 'BASIC INFO',
+        rows: [
+          { label: '키 / 체중', template: '{profile.basic.height} / {profile.basic.weight}' },
+          { label: '소속', template: '{profile.basic.house}', fallback: '{profile.basic.faction}' },
+          { label: '국적', template: '{profile.basic.nationality}' },
+          { label: '혈통', template: '{common.bloodStatus}' }
+        ]
+      },
+      {
+        id: 'birthInfo',
+        title: 'BIRTH INFO',
+        rows: [
+          { label: '생일', template: '{common.birthday}' },
+          { label: '탄생화 / 탄생목', template: '{common.birthFlower} / {common.birthTree}' },
+          { label: '탄생석', template: '{common.birthStone}' },
+          { label: '탄생색', template: '{common.birthColor.name}', color: '{common.birthColor.hex}' }
+        ]
+      },
+      {
+        id: 'magicInfo',
+        title: 'MAGIC INFO',
+        rows: [
+          { label: '지팡이', template: '{common.wand.wood} / {common.wand.core}' },
+          { label: '길이 / 유연성', template: '{common.wand.length} / {common.wand.flexibility}' },
+          { label: '테마색', template: '{profile.themeColor}', color: '{profile.themeColor}' },
+          { label: '무드곡', template: '{profile.magic.moodSong}', type: 'song' }
+        ]
+      }
+    ]
   },
 
   // ==========================================
-  // [NEW] 테마 설정 (색상)
+  // 테마 설정 (색상)
   // ==========================================
   theme: {
     colors: {
